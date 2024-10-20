@@ -21,7 +21,7 @@ export default function Cube() {
               <div className="face bottom large-bottom"></div>
       </div>
       <div className='cylinder-container w-full flex justify-center items-center shodow-bottom relative after:w-9/12'>
-        <div className='w-12 h-48 bg-blue-300 bottom_cylinder relative'>
+        <div className='w-12 h-36 bg-blue-300 bottom_cylinder relative'>
           <div className='w-12 h-12 rounded-full top_cylinder absolute z-10'></div>
         </div>
         <div class="w-32 h-40 bg_shape rounded rotate-45 relative before:content-[''] before:w-full before:h-full before:absolute before:translate-x-1 before:translate-y-1 before:rounded before:z-0 z-10"></div>
