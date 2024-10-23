@@ -127,6 +127,7 @@ bottom: -20px;
 .bg_shape {
     background: linear-gradient(180deg, rgba(15,18,25,1) 0%, rgba(24,25,34,1) 19%, rgb(41, 40, 46) 100%);
 }
+
 /* @keyframes rotateCube {
     from {
         transform: rotateX(0deg) rotateY(0deg);
