@@ -15,7 +15,7 @@ export default function HomeSlider() {
   return (
     <div className='h-screen homeSlider flex flex-col justify-center items-center'>
       <Cube />
-      <div className='flex-1 flex justify-center items-end relative z-100 '>
+      <div className='flex-1 flex justify-center items-end relative z-20 '>
         <h1 className='text-9xl uppercase text-whiteText'>mahsa karami</h1>
       </div>
       <h2 className='flex-1 text-whiteText uppercase tracking-wide relative'>frontend developer & app developer</h2>

@@ -40,7 +40,6 @@
     height: inherit;
 }
 
-/* Faces for the smaller cube */
 .cube .front {
     transform: rotateY(0deg) translateZ(75px);
     background: linear-gradient(306deg, rgba(48, 32, 34, 1) 19%, rgb(63 42 34) 67%);
@@ -56,7 +55,7 @@
     background: linear-gradient(311deg, rgba(107, 58, 42, 1) 34%, rgba(63, 42, 38, 1) 79%);
 }
 
-/* Faces for the larger cube with new colors */
+
 .cube-large .front {
     transform: rotateY(0deg) translateZ(100px);
     background: linear-gradient(143deg, rgba(37, 30, 34, 1) 37%, rgba(22, 21, 26, 1) 88%);
@@ -72,13 +71,14 @@
     background: linear-gradient(44deg, rgba(242, 160, 65, 1) -23%, rgba(115, 69, 46, 1) 39%, rgba(46, 39, 45, 1) 88%);
 }
 .homeSlider{
-    background: radial-gradient(circle, rgba(22, 31, 42, 1) 40%, rgb(22, 26, 33) 73%)
+    background: radial-gradient(circle, rgba(22, 31, 42, 1) 9%, rgb(22, 26, 33) 44%)
 }
 
 .sphere {
     position: relative;
     background: radial-gradient(circle at 27px 30px, #FF9A82, #FFC486, #FFE6AB);
     box-shadow: 0 0 44px rgba(254, 230, 160, 0.5);
+    animation: pulse 3s ease-in-out infinite, rotate 8s linear infinite;
 }
 
 .sphere span {
@@ -106,13 +106,12 @@
     background: radial-gradient(ellipse at center, #241F22, rgba(0, 0, 0, 0));
     z-index: -1;
     filter: blur(8px);
-    /* Adjust blur for shadow softness */
 }
 .top_cylinder{
     transform-style: preserve-3d;
-transform: rotateX(118deg) rotateY(111deg) rotateY(67deg);
-background-color: #3B312E;
-bottom: -20px;
+    transform: rotateX(118deg) rotateY(111deg) rotateY(67deg);
+    background-color: #3B312E;
+    bottom: -20px;
 }
 
 .bottom_cylinder{
@@ -128,13 +127,78 @@ bottom: -20px;
     background: linear-gradient(180deg, rgba(15,18,25,1) 0%, rgba(24,25,34,1) 19%, rgb(41, 40, 46) 100%);
 }
 
-/* @keyframes rotateCube {
-    from {
-        transform: rotateX(0deg) rotateY(0deg);
+.projectCard{
+    background: linear-gradient(180deg, rgba(35, 37, 49, .5), rgba(15, 15, 24, .5));
+    border: 1px solid #20222e;
+    border-radius: 2.3rem;
+}
+.img-box{
+    border-radius: 2.3rem;
+}
+.projectCard::before {
+    content: attr(data-index);
+        position: absolute;
+        top: -4rem;
+        right: -7rem;
+        font-size: 8rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, rgb(32, 31, 31), transparent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-mask: linear-gradient(to bottom, #6C6C6C 10%, transparent 100%);
+        -webkit-text-stroke: 1px;
+        letter-spacing: 0;
+        -webkit-text-stroke-color: #6C6C6C;
+        padding: 0.5rem;
+        z-index: 1;
+        display: inline-block;
+        text-align: center;
+}
+
+.rest{
+    background: linear-gradient(180deg, #151921 6%, #000 27%);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+        -webkit-text-fill-color: transparent;
     }
 
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
+    50% {
+        background-position: 100% 50%;
+        -webkit-text-fill-color: transparent;
     }
-} */
- 
+
+    100% {
+        background-position: 100% 50%;
+        color: white;
+    }
+}
+
+
+.projectCard {
+    position: relative;
+}
+
+.project-title {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 400% 400%;
+}
+
+.project-title.animate-gradient {
+    animation: gradient 3s ease-in-out forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
