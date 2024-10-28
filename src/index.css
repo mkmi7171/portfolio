@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'D-DIN Condensed';
+    src: url('./assets/fonts/D-DIN/D-DINCondensed.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Mark pro black';
+    src: url('./assets/fonts/Mark-pro/MarkPro-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mark pro bold';
+    src: url('./assets/fonts/Mark-pro/markpro-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mark pro';
+    src: url('./assets/fonts/Mark-pro/MarkPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'MArk pro', sans-serif;
+}
+
 .cube-container {
     perspective: 1000px;
 }
@@ -33,7 +66,7 @@
     color: white;
 }
 
-/* Adjust face transformations for both cube sizes */
+
 .cube .face,
 .cube-large .face {
     width: inherit;
@@ -192,6 +225,32 @@
     animation: gradient 3s ease-in-out forwards;
 }
 
+.menu{
+        display: flex;
+        background: rgba(42, 43, 56, .5);
+        border: 1px solid #2a2b37;
+        -webkit-backdrop-filter: blur(104px);
+        backdrop-filter: blur(104px);
+        border-radius: 1rem;
+}
+
+.project-title{
+        background-image: linear-gradient(90deg, #ffcfdf, #c7f9f7);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+                font-size: 4rem;
+                    letter-spacing: -.03em;
+}
+.experties-title {
+    background-image: linear-gradient(90deg, #c7f9f7, #ffcfdf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        font-size: 4rem;
+        letter-spacing: -.03em;
+}
+
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -200,5 +259,21 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+.gradient-title{
+    background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple), var(--color-light-blue), var(--color-light-purple));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite;
+}
+
+.project-detail{
+    font-family: 'D-DIN Condensed', sans-serif;
+        writing-mode: tb-rl;
+        letter-spacing: .19em;
+        color: #8b8b8b;
 }
 

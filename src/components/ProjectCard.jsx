@@ -41,13 +41,17 @@ export default function ProjectCard({ color, title, index, image, image2 }) {
 
 
     return (
-        <div data-index={`0${index + 1}`} className={`w-9/12 h-2/3 flex justify-center items-center projectCard before:content-[0${index + 1}] relative`}>
+        <div data-index={`0${index + 1}`} className={`w-9/12 h-3/4 flex justify-center items-center projectCard before:content-[0${index + 1}] relative`}>
+
+            <div className='w-[10%] h-full flex justify-center items-center'>
+                <p className='project-detail -rotate-180 font-semibold text-sm'>React Native<br /> Android <br />iOS, </p>
+            </div>
             <div className='h-[80%] w-[36%] img-box overflow-hidden relative' ref={imageRef} onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}></div>
 
-            <div className="w-[30%] border h-full flex flex-col justify-center items-center">
+            <div className="w-[36%] h-full flex flex-col px-4 justify-evenly items-center">
                 <h4
-                    className='text-4xl font-extrabold'
+                    className='text-4xl font-extrabold text-center leading-relaxed'
                     ref={titleRef}
                     style={{
                         background: `linear-gradient(-45deg, ${color}, #fff)`,
@@ -60,7 +64,7 @@ export default function ProjectCard({ color, title, index, image, image2 }) {
                 >
                     {`${title} Project`}
                 </h4>
-                <p className="text-whiteText before:w-24 before:h-[1px] before:bg-[#C4C4C4] hover:before:w-48 transition before:absolute relative before:bottom-0" style={{ color }}>
+                <p className="text-whiteText tracking-[.25em] font-din-condensed tracking-widest uppercase relative before:w-[50%] before:h-[1px] before:bg-[#C4C4C4] before:absolute before:-bottom-2 before:left-0 before:transition-all before:duration-300 hover:before:w-full" style={{ color }}>
                     more details
                 </p>
             </div>

@@ -1,68 +1,58 @@
 import React, { useState } from 'react'
+import Logo from '../assets/logo.png'
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false)
-    const MenuArray = [
-        { name: 'Home', destination: "Home" },
-        { name: 'Expertise', title: "Expertise" },
-        { name: 'Work', title: "Work" },
-        { name: 'contact', title: "contact" },
-    ];
+
 
     const getTransform = (index, isOpen) => {
         if (isOpen) {
             switch (index) {
-                case 0:
-                    return 'translate(-10px, -10px) ';
-                case 2:
-                    return 'translate(10px, -10px) ';
-                case 6:
-                    return 'translate(-10px, 10px) ';
-                case 8:
-                    return 'translate(10px, 10px) ';
+                case 1:
+                    return 'translateY(-10px)';
+                case 3:
+                    return 'translateX(-10px)';
+                case 5:
+                    return 'translateX(10px)';
+                case 7:
+                    return 'translateY(10px)';
                 default:
                     return '';
             }
         }
-        return ''; // Default state, no transformation when not open
+        return '';
+    };
+
+    const getOpacity = (index, isOpen) => {
+        if (isOpen && [1, 3, 5, 7].includes(index)) {
+            return 0;
+        }
+        return 1;
     };
 
     return (
-        <header className=' w-full h-16 absolute flex justify-center items-center z-30'>
-            <nav className='hidden md:flex w-1/2 h-full justify-center items-center justify-between'>
-                {MenuArray.map((item, index) => (
-                    <li className='text-whiteText flex flex-col items-end'>
-                        <span className='text-xs'>0{index + 1}</span>
-                        <p>{item.name}</p>
-                    </li>
-                ))}
+        <header className=' w-full h-16 fixed flex justify-center items-center z-30 top-10'>
+            <nav className='flex w-1/2 h-full justify-center border items-center justify-between menu px-4'>
+                <img src={Logo} alt='logo' className='w-16' />
+                <button className=" relative" onClick={() => setIsOpen(!isOpen)}>
+                    <div className="grid grid-cols-3 grid-rows-3 gap-1 w-8 h-8">
+                        {Array(9)
+                            .fill(0)
+                            .map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`w-2 h-2 rounded-full border transition-transform duration-300`}
+                                    style={{
+                                        transform: getTransform(i, isOpen),
+                                        opacity: getOpacity(i, isOpen),
+                                        transition: 'transform 0.3s, opacity 0.3s'
+                                    }}
+                                ></div>
+                            ))}
+                    </div>
+                </button>
             </nav>
-            <button className="md:hidden border relative" onClick={() => setIsOpen(!isOpen)}>
-                <div className="grid grid-cols-3 grid-rows-3 gap-1 w-8 h-8">
-                    {Array(9)
-                        .fill(0)
-                        .map((_, i) => (
-                            <div
-                                key={i}
-                                className={`w-2 h-2 rounded-full border transition-transform duration-300 ${i === 6 && 'bg-rose-600'}`}
-                                style={{
-                                    transform: getTransform(i, isOpen), // Apply transform based on index and open state
-                                }}
-                            ></div>
-                        ))}
-                </div>
-            </button>
-            {isOpen && (
-                <div className="border flex flex-col items-center md:hidden">
-                    <ul className="space-y-4">
-                        {MenuArray.map((item, index) => (
-                            <li key={index} className="text-whiteText">
-                                <p>{item.name}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+
         </header>
     )
 }

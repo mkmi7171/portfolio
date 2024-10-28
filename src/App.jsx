@@ -2,11 +2,13 @@ import React from 'react'
 import Home from './pages/Home'
 import AnimatedCursor from "react-animated-cursor"
 import Header from './components/Header'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export default function App() {
   return (
-    <div className='bg-darkBackground'>
-      {/* <AnimatedCursor
+    <BrowserRouter>
+      <Header />
+      <AnimatedCursor
         innerSize={8}
         outerSize={50}
         outerScale={1.5}
@@ -20,9 +22,11 @@ export default function App() {
           backgroundColor: '#fff'
         }}
         clickables={['a', 'button', 'input', 'textarea']}
-      /> */}
-      <Header />
-      <Home />
-    </div>
+      />
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+
   )
 }
