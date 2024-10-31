@@ -51,7 +51,7 @@ export default function ProjectCard({ color, title, index, image, image2 }) {
 
             <div className="w-[36%] h-full flex flex-col px-4 justify-evenly items-center">
                 <h4
-                    className='text-4xl font-extrabold text-center leading-relaxed'
+                    className='font-extrabold text-3xl text-center leading-relaxed font-mark-pro-bold tracking-[-.03em]'
                     ref={titleRef}
                     style={{
                         background: `linear-gradient(-45deg, ${color}, #fff)`,
@@ -64,7 +64,7 @@ export default function ProjectCard({ color, title, index, image, image2 }) {
                 >
                     {`${title} Project`}
                 </h4>
-                <p className="text-whiteText tracking-[.25em] font-din-condensed tracking-widest uppercase relative before:w-[50%] before:h-[1px] before:bg-[#C4C4C4] before:absolute before:-bottom-2 before:left-0 before:transition-all before:duration-300 hover:before:w-full" style={{ color }}>
+                <p className="text-whiteText tracking-[0.25rem] font-din-condensed uppercase relative before:w-[50%] before:h-[1px] before:bg-[#C4C4C4] before:absolute before:-bottom-2 before:left-0 before:transition-all before:duration-300 hover:before:w-full" style={{ color }}>
                     more details
                 </p>
             </div>

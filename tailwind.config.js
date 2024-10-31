@@ -14,7 +14,8 @@ export default {
           'din-condensed': ['D-DIN Condensed', 'sans-serif'],
           'mark-pro-black': ['MArk pro black', 'sans-serif'],
           'mark-pro-bold': ['MArk pro bold', 'sans-serif'],
-          'mark-pro' : ['MArk pro', 'sans-serif'],
+          'mark-pro': ['MArk pro', 'sans-serif'],
+          'circular' :['circular', 'sans-serif']
       },
     },
   },
