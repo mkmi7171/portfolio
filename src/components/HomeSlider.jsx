@@ -21,7 +21,7 @@ export default function HomeSlider() {
             </text>
           </svg>
         </div>
-        <h2 className='flex-1 text-whiteText text-4xl tracking-wide my-8 tracking-[0.3rem] font-black relative'> I am a Front-end and App developer.</h2>
+        <h2 className='flex-1 text-whiteText text-4xl leading-relaxed tracking-wide my-8 tracking-[0.3rem] font-black relative'> I am a Front-end and App developer.</h2>
         <div className='personal-img h-0 self-end relative after:w-full after:h-72 after:top-0 after:-right-2/3'>
           <div className='w-52 h-72 bg-gray-100 rounded-2xl flex flex-col justify-between p-4'>
             <img src={Arrow} className='absolute object-contain w-16 -left-1/2 rotate-[100deg]' />

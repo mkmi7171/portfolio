@@ -443,4 +443,9 @@ font-family: 'Mark pro black';
      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
  }
  
+ .mat-bg{
+        background: rgb(209 205 187 / 50%);
+            -webkit-backdrop-filter: blur(104px);
+            backdrop-filter: blur(31px);
+ }
  
