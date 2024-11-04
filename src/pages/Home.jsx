@@ -6,7 +6,7 @@ import Contact from '../components/Contact'
 
 export default function Home() {
   return (
-    <div>
+    <div >
       <HomeSlider />
       <div className='rest'>
         <Expertise />

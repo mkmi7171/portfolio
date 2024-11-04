@@ -13,9 +13,8 @@ import MahsaCard2 from '../assets/mahsaThumb2.png'
 
 export const projects = [
     { color: '#00BC8D', image: OstiganCard, image2: OstiganCard2, title: "Ostigan", },
-    { color: '#F15B28', image: MehrayanCard, image2: MehrayanCard2, title: "Mehrayan" },
     { color: '#F07646', image: AtcCard, image2: AtcCard2, title: "ATC" },
     { color: '#ECC77D', image: AgrotaminCard, image2: AgrotaminCard2, title: "Agrotamin" },
-    { color: '#ffd12c', image: OneandintlCard, image2: OneandintlCard2, title: "Oneandintl" },
+    { color: '#F15B28', image: MehrayanCard, image2: MehrayanCard2, title: "Mehrayan" },
     { color: '#7D01BC', image: MahsaCard, image2: MahsaCard2, title: "Portfolio" },
 ];

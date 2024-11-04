@@ -39,16 +39,16 @@ export default function Contact() {
                         <div className='flex justify-between'>
                             <img src={User} alt='user' className='w-10' />
                         </div>
-                        <blockquote className='mb-5 leading-loose'>Mahsa is an incredibly talented and dedicated mobile app developer who consistently delivers high-quality work. Her technical expertise is top-notch, particularly in iOS and Android development, and she has a great ability to translate complex requirements into intuitive and user-friendly apps.
+                        <blockquote className='my-4 leading-loose'>Mahsa is an incredibly talented and dedicated mobile app developer who consistently delivers high-quality work. Her technical expertise is top-notch, particularly in iOS and Android development, and she has a great ability to translate complex requirements into intuitive and user-friendly apps.
                         </blockquote>
                         <span className='font-bold block'>- Behdad Montazerin </span>
                         <span className='font-din-condensed'>Product Designer</span>
                     </div>
-                    <div className='bg-[#FFBC67] p-4 rounded-xl m-4'>
+                    <div className='bg-[#fcae4a] p-4 rounded-xl m-4'>
                         <div className='flex justify-between'>
                             <img src={User} alt='user' className='w-10' />
                         </div>
-                        <blockquote className='mb-5 leading-loose'>
+                        <blockquote className='my-4 leading-loose'>
                             Mrs. Mahsa Karami is one of the most delightful people I had the pleasure of working for in my career. Not only did she have a unique ability to keep our team organized and on schedule, but her constant communication helped lift our spirits in challenging situations.
                         </blockquote>
                         <span className='font-bold block'>- Seyed Amirreza Ardebili</span>

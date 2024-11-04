@@ -41,8 +41,12 @@ body{
     font-family: 'MArk pro', sans-serif;
 }
 
+
 .cube-container {
-    perspective: 1000px;
+                background-image:
+                        linear-gradient(to right, rgba(132, 132, 132, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(132, 132, 132, 0.1) 1px, transparent 1px);
+                    background-size: 25px 25px;
 }
 
 .cube {
@@ -79,88 +83,75 @@ body{
 
 .cube .front {
     transform: rotateY(0deg) translateZ(50PX);
-background: linear-gradient(to top right, rgba(255, 204, 0, 1), rgb(255, 62, 94) 100%, rgba(255, 51, 102, 1) 100%, rgba(255, 121, 85, 1))
+background: linear-gradient(to top right, #C7810A 100%, #CA7D08 100%)
 }
 
 .cube .right {
     transform: rotateY(90deg) translateZ(50PX);
-    background: linear-gradient(333deg, rgba(255, 204, 0, 1), rgba(255, 121, 85, 1) 64.29%, rgba(255, 51, 102, 1))
+    background: linear-gradient(333deg, #EEEF8A 64.29%, #E9E670 100%)
 }
 
 .cube .top {
     transform: rotateX(90deg) translateZ(50PX);
-    background: linear-gradient(-280deg, rgba(255, 204, 0, 1), rgba(255, 121, 85, 1) 84.45%, rgba(255, 51, 102, 1))
+    background: linear-gradient(-280deg, #DCDD63 50%, #EEEF8A 100%)
 }
 
 
 .cube-large .front {
     transform: rotateY(0deg) translateZ(65PX);
-    background: linear-gradient(141deg, rgba(255, 204, 0, 1) -29%, rgba(255, 121, 85, 1) 50%, rgba(255, 51, 102, 1) 100%)
+    background: linear-gradient(141deg, #D2B331 50%, #D1A32D 100%)
 }
 
 .cube-large .right {
     transform: rotateY(90deg) translateZ(65PX);
-    background: linear-gradient(213deg, rgba(255, 204, 0, 1) -25%, rgba(255, 121, 85, 1) 50%, rgba(255, 51, 102, 1) 100%)
+    background: linear-gradient(213deg, #EEE889 50%, #F0EE93 100%)
 }
 
 .cube-large .bottom {
     transform: rotateX(-90deg) translateZ(65PX);
-    background: linear-gradient(35deg, rgba(255, 204, 0, 1) -8%, rgba(255, 121, 85, 1) 50%, rgba(255, 51, 102, 1) 100%)
+    background: linear-gradient(35deg, #E0E170 50%, #E0E170 100%)
 }
 .homeSlider{
-    background: radial-gradient(circle, rgba(22, 31, 42, 1) 9%, rgb(22, 26, 33) 44%)
+    background: linear-gradient(0deg, #F9C587 9%, #FF9043 44%);
+
 }
 
-/* .sphere {
-    position: relative;
-    background: radial-gradient(circle at 27px 30px, #FF9A82, #FFC486, #FFE6AB);
-    box-shadow: 0 0 44px rgba(254, 230, 160, 0.5);
-    animation: pulse 3s ease-in-out infinite, rotate 8s linear infinite;
+svg {
+    width: 10vmin;
+    overflow: visible;
 }
 
-.sphere span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 210, 0.3), transparent);
-    filter: blur(10px);
-}
-.cylinder-container{
-    perspective: 1000px;
+path {
+    opacity: 1;
+    transition: opacity 0.2s;
 }
 
-.cylinder-container::after {
+.dg :is(.cr.string, .cr.number) input[type=text] {
+    color: white;
+    line-height: 1;
+}
+
+.rotating-text {
+    display: inline-block;
+    animation: rotate 10s linear infinite;
+    /* Adjust the duration as needed */
+}
+
+.personal-img::after{
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 30px;
-    background: radial-gradient(ellipse at center, #241F22, rgba(0, 0, 0, 0));
     z-index: -1;
-    filter: blur(8px);
-}
-.top_cylinder{
-    transform-style: preserve-3d;
-    transform: rotateX(118deg) rotateY(111deg) rotateY(67deg);
-    background-color: #3B312E;
-    bottom: -20px;
+    background-image: radial-gradient(circle at 28% 50%, rgb(228, 155, 187), transparent 60%)
 }
 
-.bottom_cylinder{
-    transform: rotate(45deg);
-    transform: rotate(132deg);
-    background: linear-gradient(85deg, rgba(18, 12, 16, 1) 39%, rgba(38, 28, 35, 1) 100%);
-} */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
 
-.bg_shape::before{
-    background: linear-gradient(180deg, rgba(15, 18, 25, 1) 0%, rgba(24, 25, 34, 1) 19%, rgba(27, 26, 31, 1) 100%);
-}
-.bg_shape {
-    background: linear-gradient(180deg, rgba(15,18,25,1) 0%, rgba(24,25,34,1) 19%, rgb(41, 40, 46) 100%);
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .projectCard{
@@ -194,7 +185,7 @@ font-family: 'Mark pro black';
 }
 
 .rest{
-    background: linear-gradient(180deg, #151921 6%, #000 27%);
+    background: linear-gradient(180deg, #F8C586 6%, #f6c58a 27%);
 }
 
 @keyframes gradient {
@@ -230,15 +221,6 @@ font-family: 'Mark pro black';
     animation: gradient 3s ease-in-out forwards;
 }
 
-.menu{
-        display: flex;
-        background: rgba(42, 43, 56, .5);
-        border: 1px solid #2a2b37;
-        -webkit-backdrop-filter: blur(104px);
-        backdrop-filter: blur(104px);
-        border-radius: 1rem;
-}
-
 .project-title{
         background-image: linear-gradient(90deg, #ffaa88, #fbc47c);
         background-clip: text;
@@ -248,12 +230,26 @@ font-family: 'Mark pro black';
                     letter-spacing: -.03em;
 }
 .experties-title {
-    background-image: linear-gradient(90deg, #ffaa88 10%, #fbc47c 40%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-        font-size: 3.5rem;
-        letter-spacing: -.03em;
+-webkit-background-clip: text;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    -webkit-mask: "white";
+    -webkit-text-stroke: 1px;
+    letter-spacing: 0;
+    -webkit-text-stroke-color: #000000;
+    font-size: 4rem;
+    position: relative;
+    z-index: 0;
+}
+.experties-title::after {
+    position: absolute;
+    top: 4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    z-index: -1;
+    font-size: 4rem;
+-webkit-text-fill-color: rgb(0, 0, 0);
 }
 .contact-title {
     background-image: linear-gradient(90deg, #ffaa88 0%, #fbc47c 90%);
@@ -280,24 +276,6 @@ font-family: 'Mark pro black';
     --color-yellow: #ffbe0b;
 }
 
-.ideas {
-    display: inline;
-    /* Create a repeating gradient pattern */
-    background-image: linear-gradient(-45deg,
-            var(--color-light-blue),
-            var(--color-light-purple),
-            var(--color-pink),
-            var(--color-yellow),
-            var(--color-light-blue));
-    background-size: 200% 200%;
-    /* Large size to create smooth animation */
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 6s infinite ease-in-out;
-    /* Smooth looping animation */
-}
 
 @keyframes gradient-shift {
     0% {
@@ -328,4 +306,141 @@ font-family: 'Mark pro black';
         letter-spacing: .19em;
         color: #8b8b8b;
 }
+/* ----------------------------------------------------------------*/
 
+@keyframes wave-leaf1 {
+
+    0%,
+    100% {
+        transform: rotateZ(-14deg);
+    }
+
+    50% {
+        transform: rotateZ(-16deg);
+    }
+}
+
+@keyframes wave-leaf2 {
+
+    0%,
+    100% {
+        transform: rotateZ(5deg);
+    }
+
+    50% {
+        transform: rotateZ(2deg);
+    }
+}
+
+@keyframes wave-leaf3 {
+
+    0%,
+    100% {
+        transform: rotateZ(8deg);
+    }
+
+    50% {
+        transform: rotateZ(13deg);
+    }
+}
+.mug{
+        border-radius: 5px 5px 8px 8px;
+}
+.plant{
+        top: initial;
+        border-radius: 0 0 12px 12px
+}
+
+.leaf1{
+            border-radius: 90% 70% 70% 70%;
+                left: 15%;
+                    top: -55%;
+                        animation: wave-leaf1 1.5s infinite ease-in-out;
+}
+
+.leaf2{
+		border-radius: 80% 60% 70% 70%;
+            left: 35%;
+                top: -85%;
+                    animation: wave-leaf2 1.7s infinite ease-in-out;
+}
+.leaf3{
+            border-radius: 80% 75% 70% 70%;
+                left: 60%;
+                    top: -45%;
+                    transform-origin: 0% 50%;
+                animation: wave-leaf3 2s infinite ease-in-out;
+}
+ .cup {
+     top: initial;
+     border-radius: 5px 5px 8px 8px;
+ }
+
+ .cup::after {
+     left: 80%;
+     top: calc(50% - 9px);
+     width: 15px;
+     height: 18px;
+     background: #3D8AB6;
+     position: absolute;
+     content: '';
+     box-sizing: border-box;
+     border: 1px solid #2D2D2D;
+     border-radius: 50%;
+     z-index: -2;
+ }
+
+.cup::before {
+     left: 90%;
+     top: calc(50% - 6.5px);
+     width: 10px;
+     height: 13px;
+     background: #FAFAFA;
+     position: absolute;
+     content: '';
+     box-sizing: border-box;
+     border: 1px solid #2D2D2D;
+     border-radius: 50%;
+     z-index: -1;
+ }
+
+ .cup .tea {
+     box-sizing: border-box;
+     border-radius: 1px;
+     border: 0.5px solid #2D2D2D;
+ }
+
+.cup .tea::before {
+     left: 2.5px;
+     top: -8px;
+     width: 1px;
+     height: 8px;
+     background: #2D2D2D;
+     position: absolute;
+     content: '';
+     box-sizing: border-box;
+ }
+
+.cup .steam {
+     box-shadow: 5px -10px 0 #adadad, 10px -5px 0 #adadad;
+     animation: steam 3s infinite;
+ }
+ @keyframes steam {
+     0% {
+         top: -2px;
+         opacity: 1;
+     }
+
+     100% {
+         top: -25px;
+         opacity: 0;
+     }
+ }
+
+
+.light {
+     z-index: -1;
+     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+ }
+ 
+ 
