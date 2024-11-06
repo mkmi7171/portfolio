@@ -9,9 +9,11 @@ export default function Home() {
     <div >
       <HomeSlider />
       <div className='rest'>
-        <Expertise />
-        <Projects />
-        <Contact />
+        <div className='stripes'>
+          <Expertise />
+          <Projects />
+          <Contact />
+        </div>
       </div>
     </div>
   )

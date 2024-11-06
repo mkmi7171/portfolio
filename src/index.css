@@ -43,10 +43,13 @@ body{
 
 
 .cube-container {
-                background-image:
-                        linear-gradient(to right, rgba(132, 132, 132, 0.1) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(132, 132, 132, 0.1) 1px, transparent 1px);
-                    background-size: 25px 25px;
+    background-image: linear-gradient(to right, #7f7f7f4e 0.5px, transparent 0.5px);
+        background-size: 200px 100%;
+}
+
+.stripes{
+    background-image: linear-gradient(to right, #7f7f7f4e 0.5px, transparent 0.5px);
+        background-size: 200px 100%;
 }
 
 .cube {
@@ -112,7 +115,7 @@ background: linear-gradient(to top right, #C7810A 100%, #CA7D08 100%)
     background: linear-gradient(35deg, #E0E170 50%, #E0E170 100%)
 }
 .homeSlider{
-    background: linear-gradient(0deg, #F9C587 9%, #FF9043 44%);
+    background: linear-gradient(0deg, #e8e4dc 9%, #FF9043 44%);
 
 }
 
@@ -185,7 +188,8 @@ font-family: 'Mark pro black';
 }
 
 .rest{
-    background: linear-gradient(180deg, #F8C586 6%, #f6c58a 27%);
+    background: linear-gradient(180deg, #e8e4dc 6%, #e8e4dc 27%);
+    
 }
 
 @keyframes gradient {
@@ -205,6 +209,42 @@ font-family: 'Mark pro black';
     }
 }
 
+.color-circle::before{
+content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    filter: blur(95px);
+    border-radius: 100%;
+    z-index: -1;
+}
+.green-circle::before{
+    background-color: rgb(9, 188, 138);
+}
+.purple-circle::before{
+    background-color: rgb(107, 71, 227);
+}
+.white-sub{
+    transform: rotateX(-52deg) rotateZ(48deg) translateZ(33px) translateY(10px);
+}
+
+.green-circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-top: 3px solid rgb(9, 188, 138);
+    border-left: 3px solid rgb(9, 188, 138);
+    transform: rotateX(22deg) rotateZ(22deg) rotateY(-31deg) translateY(-10px)
+}
+.purple-circle::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    top: 5%;
+    background-color: rgb(107, 71, 227);
+}
 
 .projectCard {
     position: relative;
