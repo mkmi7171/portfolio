@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import AnimatedCursor from "react-animated-cursor"
 import Header from './components/Header'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import '@fontsource/manrope';
 
 export default function App() {
   return (

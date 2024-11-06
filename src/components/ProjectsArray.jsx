@@ -8,7 +8,7 @@ import OneandintlCard from '../assets/oneandintlThumb.png'
 import OneandintlCard2 from '../assets/oneandintlThumb2.png'
 import AgrotaminCard from '../assets/agroThumb.png'
 import AgrotaminCard2 from '../assets/agroThumb2.png'
-import MahsaCard from '../assets/mahsaThumb.webp'
+import MahsaCard from '../assets/mahsaThumb.png'
 import MahsaCard2 from '../assets/mahsaThumb2.png'
 
 export const projects = [
@@ -17,4 +17,5 @@ export const projects = [
     { color: '#ECC77D', image: AgrotaminCard, image2: AgrotaminCard2, title: "Agrotamin" },
     { color: '#F15B28', image: MehrayanCard, image2: MehrayanCard2, title: "Mehrayan" },
     { color: '#7D01BC', image: MahsaCard, image2: MahsaCard2, title: "Portfolio" },
+    { color: '#7D01BC', image: OneandintlCard, image2: OneandintlCard2, title: "oneandintl" }
 ];
