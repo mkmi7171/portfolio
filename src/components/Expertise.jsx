@@ -4,7 +4,7 @@ import Mobile from '../assets/mobile.png'
 export default function Expertise() {
   return (
     <div className='flex relative flex-col item-center justify-center flex-wrap py-12 px-40' style={{ perspective: '1000px' }}>
-      <h2 after="Expertise" className='text-whiteText mb-8 font-mark-pro-bold font-black experties-title after:content-[attr(after)]'> Expertise</h2>
+      <h2 after="Expertise" className='text-whiteText mb-8 font-black experties-title after:content-[attr(after)]'> Expertise</h2>
       <div className='flex flex-col relative'>
         <div className='flex justify-evenly gap-5 h-[36rem] items-end self-end relative' style={{ perspective: 1000 }}>
           <div className='h-full color-circle flex justify-center purple-circle relative after:h-96 after:rotate-[35deg]'>

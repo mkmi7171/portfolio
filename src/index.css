@@ -9,26 +9,6 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Mark pro black';
-    src: url('./assets/fonts/Mark-pro/MarkPro-Black.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Mark pro bold';
-    src: url('./assets/fonts/Mark-pro/markpro-bold-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Mark pro';
-    src: url('./assets/fonts/Mark-pro/MarkPro.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'circular';
@@ -37,8 +17,28 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'safiro';
+    src: url('./assets/fonts/safiro-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --background-color: #F7F7F7;
+    --text-color: #505050;
+}
+
+/* Dark mode */
+.dark {
+    --background-color: #161616;
+    --text-color: #e5e7eb;
+}
+
+
 body{
-    font-family: 'Manrope', sans-serif;
+        background-color: var(--background-color);
+            color: var(--text-color);
+    font-family: 'safiro', sans-serif;
 }
 
 
@@ -364,5 +364,185 @@ content: '';
             -webkit-backdrop-filter: blur(104px);
             backdrop-filter: blur(31px);
  }
- 
- 
+
+ .dots::after, .dots::before{
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #515151;
+    top: 50%;
+ }
+
+  .dots::before {
+    left:-3px
+  }
+   .dots::after{
+right: -3px;
+   }
+ /* **************************************************** */
+
+:root {
+  --color-bg1: rgb(108, 0, 162);
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 255,
+    143,
+    66; 
+  --color2: 255,
+    143,
+    66;
+  --color3: 255,
+    143,
+    66;
+  --color4: 255,
+    143,
+    66;
+  --color5: 255,
+    143,
+    66;
+  --color-interactive: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+/* Keyframes for the animations */
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+/* Gradient background and circles */
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+}
+
+.gradients-container {
+  filter: blur(40px);
+  width: 100%;
+  height: 100%;
+}
+
+.g1, .g2, .g3, .g4, .g5 {
+  position: absolute;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  mix-blend-mode: var(--blending);
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+/* Gradient Background and Circles */
+.g1,
+.g2,
+.g3,
+.g4,
+.g5 {
+    position: absolute;
+    width: var(--circle-size);
+    /* Keep it as is for now */
+    height: var(--circle-size);
+    /* Same for all for now */
+    mix-blend-mode: var(--blending);
+    opacity: 0.8;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Modify g1 to g5 to create ellipses */
+.g1 {
+    background: radial-gradient(circle, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%);
+    animation: moveVertical 30s ease infinite;
+    width: 350px;
+    /* Adjust width for ellipse */
+    height: 150px;
+    /* Adjust height for ellipse */
+}
+
+.g2 {
+    background: radial-gradient(circle, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+    width: 300px;
+    height: 180px;
+}
+
+.g3 {
+    background: radial-gradient(circle, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+    width: 500px;
+    height: 200px;
+}
+
+.g4 {
+    background: radial-gradient(circle, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%);
+    animation: moveHorizontal 40s ease infinite;
+    opacity: 0.7;
+    width: 500px;
+    height: 130px;
+}
+
+.g5 {
+    background: radial-gradient(circle, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%);
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+    width: 600px;
+    /* Make ellipse wider */
+    height: 250px;
+    /* Make ellipse shorter */
+}
+/* Interactive bubble */
+.interactive {
+  position: absolute;
+  background: radial-gradient(circle, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%);
+  mix-blend-mode: var(--blending);
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+  opacity: 0.7;
+}
+
+

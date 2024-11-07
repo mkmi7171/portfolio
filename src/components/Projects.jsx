@@ -1,54 +1,38 @@
-import { useEffect, useRef, useState } from "react";
+
 import { projects } from "./ProjectsArray";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
-    const [scale, setScale] = useState(1.2); // Start with a zoomed-in scale
-    const projectsRef = useRef(null);
 
-    // Handle scroll event
-    useEffect(() => {
-        const handleScroll = () => {
-            if (projectsRef.current) {
-                const elementTop = projectsRef.current.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                const maxScale = 1.2;
-                const minScale = 1;
-
-                // Calculate scale based on scroll position
-                let newScale = maxScale - ((windowHeight - elementTop) / windowHeight) * (maxScale - minScale);
-                newScale = Math.max(minScale, Math.min(maxScale, newScale)); // Clamp between minScale and maxScale
-                setScale(newScale);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     return (
-        <div
-            ref={projectsRef}
-        >
+        <div className=" h-[50vh] relative mb-32">
+            <div className="gradients-container absolute">
+                <div className="g1"></div>
+                <div className="g2"></div>
+                <div className="g3"></div>
+                <div className="g4"></div>
+                <div className="g5"></div>
+
+            </div>
             <h2
-                after="Selected Projects"
-                className="text-5xl m-40 mb-24 font-mark-pro-bold font-black text-whiteText experties-title after:content-[attr(after)]"
+                after="Projects"
+                className="text-5xl mx-40 mb-24 font-black text-whiteText experties-title after:content-[attr(after)]"
             >
-                Selected Projects
+                Projects
             </h2>
-            <div className="parent gap-4" style={{
-                transform: `scale(${scale})`,
-                transition: "transform 0.5s ease-out", // Smooth transition effect
-            }}>
+            <div className="parent gap-4">
                 {projects.map((project, index) => (
-                    <ProjectCard
-                        key={index}
-                        color={project.color}
-                        title={project.title}
-                        image={project.image}
-                        index={index}
-                        image2={project.image2}
-                    />
+                    <div className="absolute bottom-0 right-5">
+                        <ProjectCard
+                            key={index}
+                            color={project.color}
+                            title={project.title}
+                            image={project.image}
+                            index={index}
+                            image2={project.image2}
+                        />
+                 </div>
                 ))}
             </div>
         </div>
