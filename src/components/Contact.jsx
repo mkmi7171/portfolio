@@ -8,7 +8,7 @@ export default function Contact() {
     return (
         <div>
             <div className='flex gap-4'>
-                <div className='flex-[1.05] px-24 flex flex-col border border-black items-center justify-center'>
+                <div className='flex-[1.05] px-24 flex flex-col items-center justify-center'>
                     <p className='w-1/2 leading-loose'>Thanks for stopping by, I’m currently looking to join a new team of creative designers and developers. If you think we might be a good fit for one another, send me an  email<span>
                     </span>
                     </p>

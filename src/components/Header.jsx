@@ -47,29 +47,28 @@ export default function Header() {
     return (
         <div className="relative text-[#505050] text-extralight">
             <header className="w-full h-16 absolute flex justify-center items-center z-10">
-                <nav className="flex w-full border h-full items-center px-4 justify-between">
+                <nav className="flex w-full h-full items-center px-4 justify-between">
 
-                    <span className='text-xs uppercase'>{`${location}, ${currentTime}`}</span>
-
-                    <div className="rotating-text">
+                    <div className='flex items-center'>
                         <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 id="circlePath"
                                 fill="none"
                                 strokeWidth="4"
                                 d="
-                                M 10, 50
+                                M 10, 70
                                 a 40,40 0 1,1 80,0
                                 a 40,40 0 1,1 -80,0"
                             />
-                            <text id="text" fontFamily="monospace" fontSize="14" fill="#505050">
+                            <text id="text" fontFamily="monospace" fontSize="16" fill="#505050">
                                 <textPath id="textPath" href="#circlePath">
                                     Mahsa Karami Mahsa Karami
                                 </textPath>
                             </text>
                         </svg>
+                        <span className='text-xs uppercase'>{`${location}, ${currentTime}`}</span>
                     </div>
-
+                   
                     {/* Navigation Links */}
                     <div className="flex text-xs uppercase h-full self-center items-center">
                         <Link to="/"><p>Home</p></Link>

@@ -12,7 +12,9 @@ export default {
       },
         fontFamily: {
           'din-condensed': ['D-DIN Condensed', 'sans-serif'],
-          'circular' :['circular', 'sans-serif']
+          'circular': ['circular', 'sans-serif'],
+          'safiro-med': ['safiro', 'sans-serif'],
+          'safiro-reg-i' :['safiro-reg-i', 'sans-serif']
       },
     },
   },
