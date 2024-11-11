@@ -11,7 +11,7 @@ export default function Home() {
       <div className='rest'>
         <div className='stripes'>
           <Expertise />
-          <Projects />
+          {/* <Projects /> */}
           <Contact />
         </div>
       </div>

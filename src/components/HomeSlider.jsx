@@ -2,25 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { calcLength, motion, px } from 'framer-motion';
 import Cube from './Cube';
 import Mahsa from '../assets/mahsa.jpeg';
+import Socials from './Socials';
+import InteractiveBackground from './InteractiveBackground';
 
 export default function HomeSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Trigger animation after component mounts
-    setTimeout(() => setIsLoaded(true), 100); // Adjust delay if needed
+    setTimeout(() => setIsLoaded(true), 100); 
   }, []);
 
-  const Arrow = () => {
-    return (
-      <div className="absolute top-1 right-1 group-hover:">
-        <svg width="20" height="12" viewBox="0 0 18 17" fill="none" className="icon-svg | w-[1.8rem] h-auto">
-          <path d="M4.75928 4.96442L13.3288 4.50811L12.5375 12.7426" className="stroke-current"></path>
-          <path d="M13.3857 4.39875L4.90039 12.884" className="stroke-current"></path>
-        </svg>
-      </div>
-    );
-  };
 
 
   const containerVariants = {
@@ -48,8 +39,9 @@ export default function HomeSlider() {
 
   return (
     <div className="h-screen homeSlider flex flex-col justify-evenly relative items-center">
+      <InteractiveBackground />
       <div className="flex px-24 justify-between items-center w-fit z-10">
-        <div className="relative">
+        <div className="relative homeSection">
           <div className="flex items-center w-1/2">
               <motion.h1
               className="text-[6rem] font-[500] uppercase leading-[0.9]"
@@ -62,7 +54,7 @@ export default function HomeSlider() {
                   <motion.div
                     key={index}
                     variants={letterVariants}
-                    className="overflow-hidden char border-black"
+                    className="overflow-hidden char"
                     style={{ display: 'inline-block',}}
                   >
                     {char}
@@ -113,7 +105,6 @@ export default function HomeSlider() {
             style={{
               transition: 'all 1.1s ease 0.5s',
               position: isLoaded ? 'relative' : 'absolute',
-              // left:isLoaded? '0' : '90%'
             }}
           >
             <span className='text-sm'>FrontEnd</span>
@@ -137,43 +128,7 @@ export default function HomeSlider() {
         </motion.div>
 
       </div>
-      <ul className='border absolute bottom-0 left-3 flex flex-col  gap-3 my-24'>
-        <li className='overflow-hidden relative group border w-24 h-6 border-gray-500 px-2 py-1 rounded-3xl'>
-          <div className="flex items-center">
-            <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
-              LINKEDIN
-            </p>
-            <Arrow />
-          </div>
-          <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100'>
-            LINKEDIN
-          </p>
-        </li>
-
-        <li className='overflow-hidden relative group border w-24 h-6 border-gray-500 px-2 py-1 rounded-3xl'>
-          <div className="flex items-center">
-            <p className='absolute top-1 text-xs group-hover:absolute  group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
-              GITHUB
-            </p>
-            <Arrow />
-          </div>
-          <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100'>
-            GITHUB
-          </p>
-        </li>
-        <li className='overflow-hidden relative group border w-24 h-6 border-gray-500 px-2 py-1 rounded-3xl'>
-
-          <div className="flex items-center">
-            <p className='absolute top-1 text-xs group-hover:absolute  group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
-              EMAIL
-            </p>
-            <Arrow />
-          </div>
-          <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100' >
-            EMAIL
-          </p>
-        </li>
-      </ul>
+      <Socials ulClass={` absolute bottom-0 left-3 flex flex-col  gap-3 my-8`} />
     </div>
   )
 }

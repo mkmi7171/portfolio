@@ -1,72 +1,64 @@
 import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
 
-const DynamicBackground = () => {
-    const mountRef = useRef(null);
+
+const InteractiveBackground = () => {
+    const interactiveRef = useRef(null);
+    let curX = 0;
+    let curY = 0;
+    let tgX = 0;
+    let tgY = 0;
 
     useEffect(() => {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
+        const interBubble = interactiveRef.current;
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        mountRef.current.appendChild(renderer.domElement);
-
-        const particleCount = 500;
-        const particles = new THREE.BufferGeometry();
-        const positions = [];
-
-        for (let i = 0; i < particleCount; i++) {
-            positions.push((Math.random() - 0.5) * 10); // x
-            positions.push((Math.random() - 0.5) * 10); // y
-            positions.push((Math.random() - 0.5) * 10); // z
-        }
-        particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-
-        const particleMaterial = new THREE.PointsMaterial({
-            color: 0x8b00ff,
-            size: 0.1,
-            transparent: true,
-            opacity: 0.8
-        });
-
-        const particleSystem = new THREE.Points(particles, particleMaterial);
-        scene.add(particleSystem);
-
-        const animateParticles = () => {
-            const positions = particles.attributes.position.array;
-            for (let i = 0; i < positions.length; i += 3) {
-                positions[i + 1] -= 0.01;
-                if (positions[i + 1] < -5) positions[i + 1] = 5;
+        function move() {
+            curX += (tgX - curX) / 20;
+            curY += (tgY - curY) / 20;
+            if (interBubble) {
+                interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
             }
-            particles.attributes.position.needsUpdate = true;
+            requestAnimationFrame(move);
+        }
+
+        const handleMouseMove = (event) => {
+            tgX = event.clientX;
+            tgY = event.clientY;
         };
 
-        const animate = () => {
-            requestAnimationFrame(animate);
-            animateParticles();
-            renderer.render(scene, camera);
-        };
-
-        animate();
-
-        const onResize = () => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-        };
-        window.addEventListener('resize', onResize);
+        window.addEventListener('mousemove', handleMouseMove);
+        move();
 
         return () => {
-            window.removeEventListener('resize', onResize);
-            mountRef.current.removeChild(renderer.domElement);
-            renderer.dispose();
+            window.removeEventListener('mousemove', handleMouseMove);
         };
     }, []);
 
-    return <div ref={mountRef} style={{ position: 'absolute', width: '100%', height: '100%' }} />;
+    return (
+        <div className="bubble-animation">
+            <div className="gradient-bg">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+                <div className="gradients-container">
+                    <div className="g1"></div>
+                    <div className="g2"></div>
+                    <div className="g3"></div>
+                    <div className="g4"></div>
+                    <div className="g5"></div>
+                    <div className="g6"></div>
+                    <div className="g7"></div>
+                    <div ref={interactiveRef} className="interactive"></div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
-export default DynamicBackground;
+export default InteractiveBackground;
+
