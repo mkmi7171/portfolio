@@ -1,50 +1,11 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { projects } from "./ProjectsArray";
-const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.08,
-        },
-    },
-};
-
-const letterVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: 'spring',
-            damping: 20,
-            stiffness: 90,
-        },
-    },
-};
+import { ImageTrail } from "./MouseImageTrail";
 const Projects = () => {
     return (
         <div>
-            <div className="flex h-screen items-center justify-center">
-                <motion.h1
-                    className="text-4xl font-[500] uppercase leading-[0.9]"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    {Array.from("Projects ").map((char, index) => (
-                        <motion.div
-                            key={index}
-                            variants={letterVariants}
-                            className="number font-safiro-reg-i"
-                            style={{ display: 'inline-block', }}
-                        >
-                            {char}
-                        </motion.div>
-                    ))}
-                </motion.h1>
-            </div>
+            <ImageTrail />
             <HorizontalScrollCarousel />
             <div className="flex h-48 items-center justify-center">
                 <span className="font-semibold uppercase text-neutral-500">
