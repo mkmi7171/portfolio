@@ -1,7 +1,6 @@
 import React from 'react'
 import HomeSlider from '../components/HomeSlider'
 import Expertise from '../components/Expertise'
-import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
       <div className='rest'>
         <div className='stripes'>
           <Expertise />
-          {/* <Projects /> */}
           <Contact />
         </div>
       </div>

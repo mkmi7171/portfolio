@@ -68,6 +68,9 @@
     --background-color: #161616;
     --text-color: #e5e7eb;
     --secondary-text-color: #ffffff;
+    --color-interactive: 0,
+            0,
+            0;
 }
 
 
@@ -90,6 +93,9 @@ body{
         will-change: transform;
         color: var(--secondary-text-color) !important;
         letter-spacing: -.06em;
+}
+.number{
+            color: var(--secondary-text-color) !important;
 }
 
 
@@ -270,8 +276,8 @@ content: '';
     position: absolute;
     top: 0;
     left: 20%;
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     filter: blur(110px);
     border-radius: 100%;
     z-index: -1;
@@ -290,16 +296,18 @@ content: '';
     content: '';
     position: absolute;
     top: 0;
-    border-top: 3px solid rgb(9, 188, 138);
-    border-left: 3px solid rgb(9, 188, 138);
-    transform: rotateX(22deg) rotateZ(22deg) rotateY(-31deg) translateY(-10px)
+    border-top: 2px solid rgb(9, 188, 138);
+    border-left: 2px solid rgb(9, 188, 138);
+    transform: rotateX(22deg) rotateZ(22deg) rotateY(-29deg) translateY(-5px) translateX(10px)
 }
 .purple-circle::after {
     content: '';
     position: absolute;
-    width: 2px;
     top: 5%;
-    background-color: rgb(107, 71, 227);
+    border-radius:0 2rem;
+    border-bottom: 2px solid rgb(107, 71, 227);
+    border-left: 2px solid rgb(107, 71, 227);
+    transform: rotatez(-153deg) rotateY(-29deg) rotateX(55deg) translateY(-65px) translateX(-98px);
 }
 
 .projectCard {
@@ -443,6 +451,12 @@ right: -3px;
     }
 }
 
+.gradients-container {
+    filter: blur(70px);
+    width: 100%;
+    height: 100%;
+}
+
 .gradient-bg {
     width: 100vw;
     height: 100vh;
@@ -450,86 +464,81 @@ right: -3px;
     top: 0;
     left: 0;
 
-    .gradients-container {
-        filter: url(#goo) blur(100px);
-        width: 100%;
-        height: 100%;
-    }
-
-    /* Bubble 1 */
-    .g1 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%);
-        mix-blend-mode: var(--blending);
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
-        left: calc(50% - var(--circle-size) / 2);
-        transform-origin: center center;
-        animation: moveVertical 30s ease infinite, opacityAnimation 4s ease-in-out infinite;
-    }
-
-    /* Bubble 2 */
-    .g2 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%);
-        mix-blend-mode: var(--blending);
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
-        left: calc(50% - var(--circle-size) / 2);
-        transform-origin: calc(50% - 400px);
-        animation: moveInCircle 20s reverse infinite, opacityAnimation 3s ease-in-out infinite;
-    }
-
-    /* Bubble 3 */
-    .g3 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%);
-        mix-blend-mode: var(--blending);
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2 + 200px);
-        left: calc(50% - var(--circle-size) / 2 - 500px);
-        transform-origin: calc(50% + 400px);
-        animation: moveInCircle 40s linear infinite, opacityAnimation 2s ease-in-out infinite;
-    }
-
-    /* Bubble 4 */
-    .g4 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%);
-        mix-blend-mode: var(--blending);
-        width: var(--circle-size);
-        height: var(--circle-size);
-        top: calc(50% - var(--circle-size) / 2);
-        left: calc(50% - var(--circle-size) / 2);
-        transform-origin: calc(50% - 200px);
-        animation: moveHorizontal 40s ease infinite, opacityAnimation 6s ease-in-out infinite;
-    }
-
-    /* Bubble 5 */
-    .g5 {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%);
-        mix-blend-mode: var(--blending);
-        width: calc(var(--circle-size) * 2);
-        height: calc(var(--circle-size) * 2);
-        top: calc(50% - var(--circle-size));
-        left: calc(50% - var(--circle-size));
-        transform-origin: calc(50% - 800px) calc(50% + 200px);
-        animation: moveInCircle 20s ease infinite, opacityAnimation 5s ease-in-out infinite;
-    }
-
-    /* Interactive Overlay */
-    .interactive {
-        position: absolute;
-        background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%);
-        mix-blend-mode: var(--blending);
-        width: 100%;
-        height: 100%;
-        top: -50%;
-        left: -50%;
-        opacity: 1;
-    }
 }
+.g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%);
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite, opacityAnimation 4s ease-in-out infinite;
+}
+
+/* Bubble 2 */
+.g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%);
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite, opacityAnimation 3s ease-in-out infinite;
+}
+
+/* Bubble 3 */
+.g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%);
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite, opacityAnimation 2s ease-in-out infinite;
+}
+
+/* Bubble 4 */
+.g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%);
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite, opacityAnimation 6s ease-in-out infinite;
+}
+
+/* Bubble 5 */
+.g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%);
+    mix-blend-mode: var(--blending);
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite, opacityAnimation 5s ease-in-out infinite;
+}
+
+/* Interactive Overlay */
+.interactive {
+    position: absolute;
+    background: var(--background-color);
+    mix-blend-mode: normal;
+    width: 30%;
+    height: 50%;
+    top: -30%;
+    left: -30%;
+    opacity: 1;
+    border-radius: 50%;
+}
+/* ******************************************* */

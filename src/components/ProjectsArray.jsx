@@ -1,21 +1,15 @@
 import OstiganCard from "../assets/ostiganThumb.png";
-import OstiganCard2 from "../assets/ostiganThumb2.png";
 import MehrayanCard from '../assets/mehrayanThumb.png'
-import MehrayanCard2 from '../assets/mehrayanThumb2.png'
 import AtcCard from '../assets/atcThumb.png'
-import AtcCard2 from '../assets/atcThumb2.png'
 import OneandintlCard from '../assets/oneandintlThumb.png'
-import OneandintlCard2 from '../assets/oneandintlThumb2.png'
 import AgrotaminCard from '../assets/agroThumb.png'
-import AgrotaminCard2 from '../assets/agroThumb2.png'
 import MahsaCard from '../assets/mahsaThumb.png'
-import MahsaCard2 from '../assets/mahsaThumb2.png'
 
 export const projects = [
-    { color: '#00BC8D', image: OstiganCard, image2: OstiganCard2, title: "Ostigan", },
-    { color: '#F07646', image: AtcCard, image2: AtcCard2, title: "ATC" },
-    { color: '#ECC77D', image: AgrotaminCard, image2: AgrotaminCard2, title: "Agrotamin" },
-    { color: '#F15B28', image: MehrayanCard, image2: MehrayanCard2, title: "Mehrayan" },
-    { color: '#7D01BC', image: MahsaCard, image2: MahsaCard2, title: "Portfolio" },
-    { color: '#7D01BC', image: OneandintlCard, image2: OneandintlCard2, title: "oneandintl" }
+    { color: '#00BC8D', image: OstiganCard, title: "Ostigan", },
+    { color: '#F07646', image: AtcCard,  title: "ATC" },
+    { color: '#ECC77D', image: AgrotaminCard, title: "Agrotamin" },
+    { color: '#F15B28', image: MehrayanCard,  title: "Mehrayan" },
+    { color: '#7D01BC', image: MahsaCard, title: "Portfolio" },
+    { color: '#7D01BC', image: OneandintlCard, title: "oneandintl" }
 ];

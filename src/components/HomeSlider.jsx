@@ -40,7 +40,7 @@ export default function HomeSlider() {
   return (
     <div className="h-screen homeSlider flex flex-col justify-evenly relative items-center">
       <InteractiveBackground />
-      <div className="flex px-24 justify-between items-center w-fit z-10">
+      <div className="flex px-24 items-center w-fit z-10">
         <div className="relative homeSection">
           <div className="flex items-center w-1/2">
               <motion.h1
@@ -49,7 +49,6 @@ export default function HomeSlider() {
                 initial="hidden"
                 animate="visible"
               >
-                {/* Animating "About" letter-by-letter */}
                 {Array.from("About ").map((char, index) => (
                   <motion.div
                     key={index}
@@ -77,18 +76,22 @@ export default function HomeSlider() {
               </svg>
             </div>
           </div>
-          <p className='flex-1 w-1/2 leading-relaxed tracking-wide my-8 tracking-[0.3rem] relative'> I am a creative front end and mobile application developer. I specialize in creating intuitive and scalabe websites and applications.</p>
+          <p className='flex-1 w-1/2 leading-relaxed tracking-wide my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
         </div>
-        <div className='flex w-2/5 h-full gap-8'>
-          <h2 className='font-bold text-2xl'>Collabs</h2>
+        <div className='flex w-3/4 h-full gap-8 pt-12'>
+            <h2 className='font-bold text-2xl font-safiro-reg-i'>Collabs</h2>
           <div className='text flex flex-col gap-4'>
             <div className='gap-3 flex flex-col'>
-              <span className='font-bold'>Mehrayan</span>
-              <span className='text-sm'>Frontend and mobile App developer</span>
+              <span className='font-black'>Mehrayan <span className='text-xs mx-3'>2022-2024</span></span>
+              <span className='text-sm'>Frontend and Mobile App developer</span>
             </div>
             <div className='gap-3 flex flex-col'>
-              <span className='font-bold'>Aran Agency</span>
-              <span>React developer</span>
+              <span className='font-black'>Aran Agency<span className='text-xs mx-3'>2020-2022</span></span>
+              <span className='text-sm'>React developer</span>
+            </div>
+            <div className='gap-3 flex flex-col'>
+              <span className='font-black'>Manzoome Negaran Net<span className='text-xs mx-3'>2018-2020</span></span>
+              <span className='text-sm'>Web developer</span>
             </div>
           </div>
         </div>
@@ -107,9 +110,9 @@ export default function HomeSlider() {
               position: isLoaded ? 'relative' : 'absolute',
             }}
           >
-            <span className='text-sm'>FrontEnd</span>
-            <span className='text-2xl font-black'>2020</span>
-            <span className='text-sm'>developer</span>
+            <span className='text-xs'>FrontEnd</span>
+            <span className='text-4xl font-black number'>2020</span>
+            <span className='text-xs'>developer</span>
           </motion.div>
           <motion.div
             className={`w-48 h-48 flex justify-between p-4 items-center flex-col rounded-full border border-gray-400 uppercase ${isLoaded? 'left-0' : 'left-1/2 -translate-x-24'}`}
@@ -120,9 +123,9 @@ export default function HomeSlider() {
               left:isLoaded? '0' : '50%'
             }}
           >
-            <span className='text-sm'>mobile App</span>
-            <span className='text-2xl font-black'>2022</span>
-            <span className='text-sm'>developer</span>
+            <span className='text-xs'>mobile App</span>
+            <span className='text-4xl font-black number'>2022</span>
+            <span className='text-xs'>developer</span>
           </motion.div>
           <img src={Mahsa} alt='personal picture' className=' rounded-full overflow-hidden w-48 h-48 object-center object-cover z-10' />
         </motion.div>

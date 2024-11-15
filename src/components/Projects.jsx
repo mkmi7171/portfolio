@@ -1,40 +1,103 @@
-
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 import { projects } from "./ProjectsArray";
-import ProjectCard from "./ProjectCard";
+const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.08,
+        },
+    },
+};
 
-export default function Projects() {
-
-
+const letterVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: 'spring',
+            damping: 20,
+            stiffness: 90,
+        },
+    },
+};
+const Projects = () => {
     return (
-        <div className=" h-[50vh] relative mb-32">
-            <div className="gradients-container absolute">
-                <div className="g1"></div>
-                <div className="g2"></div>
-                <div className="g3"></div>
-                <div className="g4"></div>
-                <div className="g5"></div>
-
-            </div>
-            <h2
-                after="Projects"
-                className="text-5xl mx-40 mb-24 font-black text-whiteText experties-title after:content-[attr(after)]"
-            >
-                Projects
-            </h2>
-            <div className="parent gap-4">
-                {projects.map((project, index) => (
-                    <div className="absolute bottom-0 right-5">
-                        <ProjectCard
+        <div>
+            <div className="flex h-screen items-center justify-center">
+                <motion.h1
+                    className="text-4xl font-[500] uppercase leading-[0.9]"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    {Array.from("Projects ").map((char, index) => (
+                        <motion.div
                             key={index}
-                            color={project.color}
-                            title={project.title}
-                            image={project.image}
-                            index={index}
-                            image2={project.image2}
-                        />
-                 </div>
-                ))}
+                            variants={letterVariants}
+                            className="number font-safiro-reg-i"
+                            style={{ display: 'inline-block', }}
+                        >
+                            {char}
+                        </motion.div>
+                    ))}
+                </motion.h1>
+            </div>
+            <HorizontalScrollCarousel />
+            <div className="flex h-48 items-center justify-center">
+                <span className="font-semibold uppercase text-neutral-500">
+                    Scroll up
+                </span>
             </div>
         </div>
     );
-}
+};
+
+const HorizontalScrollCarousel = () => {
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+    });
+
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
+    return (
+        <div ref={targetRef} className="relative h-[300vh]">
+            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+                <motion.div style={{ x }} className="flex gap-4">
+                    {projects.map((card, index) => {
+                        return <Card card={card} key={index} />;
+                    })}
+                </motion.div>
+            </div>
+        </div>
+    );
+};
+
+const Card = ({ card, index }) => {
+    return (
+        <div
+            key={index}
+            className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
+        >
+            <div
+                style={{
+                    backgroundImage: `url(${card.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+                className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+            ></div>
+            <div className="absolute inset-0 z-10 grid place-content-center">
+                <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
+                    {card.title}
+                </p>
+            </div>
+        </div>
+    );
+};
+
+export default Projects;
+
