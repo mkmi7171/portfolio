@@ -36,7 +36,7 @@ export default function Contact() {
                     </div>
                 </div> */}
             </div>
-            <div className="text-[9px] m-6 uppercase w-fit">
+            <div className="text-[9px] p-6 uppercase w-fit">
                 <span className="block">
                     All rights reserved</span>
                 <span> ©2024 Mahsa Karami</span>

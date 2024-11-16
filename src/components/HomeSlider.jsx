@@ -38,7 +38,7 @@ export default function HomeSlider() {
   };
 
   return (
-    <div className="h-screen homeSlider flex flex-col justify-evenly relative items-center">
+    <div className="h-screen flex flex-col justify-evenly relative items-center">
       <InteractiveBackground />
       <div className="flex px-24 items-center w-fit z-10">
         <div className="relative homeSection">

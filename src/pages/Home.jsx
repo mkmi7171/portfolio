@@ -5,7 +5,7 @@ import Contact from '../components/Contact'
 
 export default function Home() {
   return (
-    <div >
+    <div className='home'>
       <HomeSlider />
       <div className='rest'>
         <div className='stripes'>

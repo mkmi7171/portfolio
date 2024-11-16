@@ -10,6 +10,7 @@ import pic7 from '../assets/smallPics/7.png'
 import pic8 from '../assets/smallPics/8.png'
 import pic9 from '../assets/smallPics/9.png'
 import pic10 from '../assets/smallPics/10.png'
+import InteractiveBackground from "./InteractiveBackground";
 
 export const ImageTrail = () => {
     const containerVariants = {
@@ -36,8 +37,8 @@ export const ImageTrail = () => {
     };
     return (
         <MouseImageTrail
-            renderImageBuffer={50}
-            rotationRange={25}
+            renderImageBuffer={60}
+            rotationRange={1}
             images={[
                 pic1,
                 pic2,
@@ -51,24 +52,29 @@ export const ImageTrail = () => {
                 pic10
             ]}
         >
-            <div className="flex h-screen items-center justify-center">
-                <motion.h1
-                    className="text-4xl font-[500] uppercase leading-[0.9]"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    {Array.from("Projects ").map((char, index) => (
-                        <motion.div
-                            key={index}
-                            variants={letterVariants}
-                            className="number font-safiro-reg-i"
-                            style={{ display: 'inline-block', }}
-                        >
-                            {char}
-                        </motion.div>
-                    ))}
-                </motion.h1>
+            <div className="flex h-screen items-center px-8 justify-between">
+                <p className="text-xs font-safiro-reg-i">last projects</p>
+                <div className=" gap-8 flex flex-col justify-center p-3">
+                    <motion.h1
+                        className="text-6xl char font-[500] uppercase leading-[0.9]"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {Array.from("Projects ").map((char, index) => (
+                            <motion.div
+                                key={index}
+                                variants={letterVariants}
+                                className=" font-safiro-reg-i"
+                                style={{ display: 'inline-block', }}
+                            >
+                                {char}
+                            </motion.div>
+                        ))}
+                    </motion.h1>
+                    <p className="w-1/2 tracking-tighter leading-5">in the following projects technologies that used is : react native, react.js and next js</p>
+                </div>
+                <p className="text-xs font-safiro-reg-i">scroll</p>
             </div>
         </MouseImageTrail>
     );
@@ -76,18 +82,15 @@ export const ImageTrail = () => {
 
 const MouseImageTrail = ({
     children,
-    // List of image sources
     images,
-    // Will render a new image every X pixels between mouse moves
     renderImageBuffer,
-    // images will be rotated at a random number between zero and rotationRange,
-    // alternating between a positive and negative rotation
     rotationRange,
 }) => {
     const [scope, animate] = useAnimate();
 
     const lastRenderPosition = useRef({ x: 0, y: 0 });
     const imageRenderCount = useRef(0);
+    const movementCounter = useRef(0);  // Add a counter to limit image renders
 
     const handleMouseMove = (e) => {
         const { clientX, clientY } = e;
@@ -100,10 +103,15 @@ const MouseImageTrail = ({
         );
 
         if (distance >= renderImageBuffer) {
-            lastRenderPosition.current.x = clientX;
-            lastRenderPosition.current.y = clientY;
+            movementCounter.current += 1; // Increment counter on mouse move
 
-            renderNextImage();
+            if (movementCounter.current >= 3) { // Trigger image every 3rd move
+                lastRenderPosition.current.x = clientX;
+                lastRenderPosition.current.y = clientY;
+
+                renderNextImage();
+                movementCounter.current = 0;  // Reset the counter
+            }
         }
     };
 
@@ -111,7 +119,6 @@ const MouseImageTrail = ({
         const deltaX = x2 - x1;
         const deltaY = y2 - y1;
 
-        // Using the Pythagorean theorem to calculate the distance
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
         return distance;
@@ -151,8 +158,9 @@ const MouseImageTrail = ({
             selector,
             {
                 opacity: [1, 0],
+                scale: [1, 0.3],
             },
-            { ease: "linear", duration: 0.5, delay: 5 }
+            { ease: "linear", duration: 0.3, delay: 0.3 }
         );
 
         imageRenderCount.current = imageRenderCount.current + 1;

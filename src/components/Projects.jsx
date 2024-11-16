@@ -7,8 +7,8 @@ const Projects = () => {
         <div>
             <ImageTrail />
             <HorizontalScrollCarousel />
-            <div className="flex h-48 items-center justify-center">
-                <span className="font-semibold uppercase text-neutral-500">
+            <div className="flex h-24 items-center justify-center">
+                <span className="text-sm uppercase">
                     Scroll up
                 </span>
             </div>
