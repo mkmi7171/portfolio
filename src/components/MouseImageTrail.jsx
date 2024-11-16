@@ -1,5 +1,5 @@
 import { useAnimate, motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import pic1 from '../assets/smallPics/1.png'
 import pic2 from '../assets/smallPics/2.png'
 import pic3 from '../assets/smallPics/3.png'
@@ -10,15 +10,17 @@ import pic7 from '../assets/smallPics/7.png'
 import pic8 from '../assets/smallPics/8.png'
 import pic9 from '../assets/smallPics/9.png'
 import pic10 from '../assets/smallPics/10.png'
-import InteractiveBackground from "./InteractiveBackground";
 
 export const ImageTrail = () => {
+    const [isTextAnimationComplete, setTextAnimationComplete] = useState(false);
+
     const containerVariants = {
         hidden: { opacity: 1 },
         visible: {
             opacity: 1,
             transition: {
                 staggerChildren: 0.08,
+                when: "afterChildren", // Wait for children to finish
             },
         },
     };
@@ -35,6 +37,7 @@ export const ImageTrail = () => {
             },
         },
     };
+
     return (
         <MouseImageTrail
             renderImageBuffer={60}
@@ -51,28 +54,32 @@ export const ImageTrail = () => {
                 pic9,
                 pic10
             ]}
+            ready={isTextAnimationComplete}
         >
             <div className="flex h-screen items-center px-8 justify-between">
                 <p className="text-xs font-safiro-reg-i">last projects</p>
-                <div className=" gap-8 flex flex-col justify-center p-3">
+                <div className="gap-8 flex flex-col justify-center items-center p-3">
                     <motion.h1
-                        className="text-6xl char font-[500] uppercase leading-[0.9]"
+                        className="text-6xl char uppercase leading-[0.9]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
+                        onAnimationComplete={() => setTextAnimationComplete(true)} // Set ready after animation
                     >
                         {Array.from("Projects ").map((char, index) => (
                             <motion.div
                                 key={index}
                                 variants={letterVariants}
-                                className=" font-safiro-reg-i"
-                                style={{ display: 'inline-block', }}
+                                className="font-safiro-reg-i"
+                                style={{ display: 'inline-block' }}
                             >
                                 {char}
                             </motion.div>
                         ))}
                     </motion.h1>
-                    <p className="w-1/2 tracking-tighter leading-5">in the following projects technologies that used is : react native, react.js and next js</p>
+                    <p className="w-1/2 tracking-tighter leading-5 font-safiro-reg font-light">
+                        in the following projects technologies that used is: react native, react.js and next.js
+                    </p>
                 </div>
                 <p className="text-xs font-safiro-reg-i">scroll</p>
             </div>
@@ -85,16 +92,17 @@ const MouseImageTrail = ({
     images,
     renderImageBuffer,
     rotationRange,
+    ready, // Add ready prop
 }) => {
     const [scope, animate] = useAnimate();
-
     const lastRenderPosition = useRef({ x: 0, y: 0 });
     const imageRenderCount = useRef(0);
-    const movementCounter = useRef(0);  // Add a counter to limit image renders
+    const movementCounter = useRef(0);
 
     const handleMouseMove = (e) => {
-        const { clientX, clientY } = e;
+        if (!ready) return; // Skip if not ready
 
+        const { clientX, clientY } = e;
         const distance = calculateDistance(
             clientX,
             clientY,
@@ -103,14 +111,14 @@ const MouseImageTrail = ({
         );
 
         if (distance >= renderImageBuffer) {
-            movementCounter.current += 1; // Increment counter on mouse move
+            movementCounter.current += 1;
 
-            if (movementCounter.current >= 3) { // Trigger image every 3rd move
+            if (movementCounter.current >= 3) {
                 lastRenderPosition.current.x = clientX;
                 lastRenderPosition.current.y = clientY;
 
                 renderNextImage();
-                movementCounter.current = 0;  // Reset the counter
+                movementCounter.current = 0;
             }
         }
     };
@@ -118,10 +126,7 @@ const MouseImageTrail = ({
     const calculateDistance = (x1, y1, x2, y2) => {
         const deltaX = x2 - x1;
         const deltaY = y2 - y1;
-
-        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-
-        return distance;
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     };
 
     const renderNextImage = () => {

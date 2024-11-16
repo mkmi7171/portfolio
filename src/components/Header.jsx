@@ -45,7 +45,7 @@ export default function Header() {
     };
 
     return (
-        <div className="relative text-[#505050] text-extralight">
+        <div className="relative text-extralight">
             <header className="w-full h-16 absolute flex justify-center items-center z-10">
                 <nav className="flex w-full h-full items-center px-4 justify-between">
 

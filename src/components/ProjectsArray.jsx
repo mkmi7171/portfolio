@@ -2,8 +2,8 @@ import OstiganCard from "../assets/ostiganThumb.png";
 import MehrayanCard from '../assets/mehrayanThumb.png'
 import AtcCard from '../assets/atcThumb.png'
 import OneandintlCard from '../assets/oneandintlThumb.png'
-import AgrotaminCard from '../assets/agroThumb.png'
-import MahsaCard from '../assets/mahsaThumb.png'
+import AgrotaminCard from '../assets/agroThumb.jpeg'
+import MahsaCard from '../assets/mahsa.jpeg'
 
 export const projects = [
     { color: '#00BC8D', image: OstiganCard, title: "Ostigan", },
