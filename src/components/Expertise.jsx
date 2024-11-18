@@ -20,7 +20,7 @@ export default function Expertise() {
             <span className="text-[#6b47e3] font-safiro-reg">React.js, Next.js</span> 
             <h3 className=' text-2xl uppercase leading-relaxed font-safiro-reg'>Frontend Development</h3>
               <p className='my-5 text-lg'>Over 4 years of development experience in React and Next.js frameworks.</p>
-            <div className='uppercase overflow-hidden relative group border w-28 h-8 border-gray-500 px-2 py-1 rounded-3xl'>
+            <div className='uppercase overflow-hidden relative group border w-28 h-8 border-gray-500 px-2 py-1 rounded-xl'>
               <div className="flex items-center">
                 <p className='absolute top-2 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
                   Projects
@@ -46,7 +46,7 @@ export default function Expertise() {
             <p className='my-5 text-lg'>
                 Skilled in developing hybrid mobile apps and cross-platform solutions using React Native framework.
             </p>
-            <div className='uppercase overflow-hidden relative group border w-28 h-8 border-gray-500 px-2 py-1 rounded-3xl'>
+            <div className='uppercase overflow-hidden relative group border w-28 h-8 border-gray-500 px-2 py-1 rounded-xl'>
               <div className="flex items-center">
                 <p className='absolute top-2 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
                   Projects

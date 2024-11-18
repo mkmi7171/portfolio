@@ -9,7 +9,7 @@ export default function Socials({ulClass}) {
   return (
     <div>
           <ul className={`${ulClass}`}>
-              <li className='cursor-pointer overflow-hidden relative group border w-24 h-8 border-gray-500 flex items-center rounded-3xl'>
+              <li className='cursor-pointer overflow-hidden relative group border w-24 h-8 border-gray-500 flex items-center rounded-xl'>
                   <div className='w-24 h-6 relative overflow-hidden px-2 py-1'>
                       <div className="flex items-center">
                           <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-500 ease-in-out group-hover:opacity-0'>
@@ -24,7 +24,7 @@ export default function Socials({ulClass}) {
                   </div>
               </li>
 
-              <li className='overflow-hidden relative group border w-24 h-8 border-gray-500 px-2 py-1 rounded-3xl'>
+              <li className='overflow-hidden relative group border w-24 h-8 border-gray-500 px-2 py-1 rounded-xl'>
                   <div className="flex items-center">
                       <p className='absolute top-2 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
                           GITHUB
@@ -36,7 +36,7 @@ export default function Socials({ulClass}) {
                   </p>
                   <Arrow className={'absolute top-full right-4 scale-50 group-hover:top-2 group-hover:right-1 group-hover:scale-100'} />
               </li>
-              <li className='overflow-hidden relative group border w-24 h-8 border-gray-500 px-2 py-1 rounded-3xl'>
+              <li className='overflow-hidden relative group border w-24 h-8 border-gray-500 px-2 py-1 rounded-xl'>
 
                   <div className="flex items-center">
                       <p className='absolute top-2 text-xs group-hover:absolute  group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>

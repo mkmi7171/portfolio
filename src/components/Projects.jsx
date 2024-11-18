@@ -11,11 +11,6 @@ const Projects = () => {
             <InteractiveBackground />
             <ImageTrail />
             <HorizontalScrollCarousel />
-            <div className="flex h-24 items-center justify-center">
-                <span className="text-sm uppercase">
-                    Scroll up
-                </span>
-            </div>
         </div>
     );
 };
@@ -27,6 +22,8 @@ const HorizontalScrollCarousel = () => {
     });
 
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
+    
 
     return (
         <div ref={targetRef} className="relative h-[300vh]">
@@ -46,12 +43,20 @@ const Card = ({ card, index }) => {
         <Link to={`/projects/${card.id}`} className="group h-56 flex gap-2">
             <motion.div
                 layoutId={`project-image-${card.id}`} 
-                className="relative h-56 w-56 rounded-full bg-cover bg-center overflow-hidden" 
+                className="relative h-56 w-56 rounded-full overflow-hidden" 
                 style={{
-                    borderRadius:'50%',
-                    backgroundImage: `url(${card.image})`,
+                    borderRadius: '50%'
                 }}
             >
+                <div
+                    style={{
+                        backgroundImage: `url(${card.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                    className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+                ></div>
+              
             </motion.div>
             <div className="w-[13.5rem] h-[13.5rem] flex rounded-full border border-gray-400 border-opacity-50 justify-center items-center relative">
                 <div className="absolute group-hover:rotate-90 transition-transform duration-300 w-52 h-52 rounded-full"></div>
