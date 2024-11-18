@@ -1,10 +1,26 @@
-import React from 'react'
+
 import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
 import AnimatedCursor from "react-animated-cursor"
 import Header from './components/Header'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from "framer-motion";
+import ProjectDetail from './pages/ProjectDetail'
 import '@fontsource/manrope';
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path='/' element={<Home />} />
+        <Route path='/projects' element={<ProjectsPage />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 export default function App() {
   return (
@@ -25,10 +41,9 @@ export default function App() {
         }}
         clickables={['a', 'button', 'input', 'textarea']}
       /> */}
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/projects' element={<ProjectsPage />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <AnimatedRoutes />
+      </AnimatePresence>
     </BrowserRouter>
 
   )
