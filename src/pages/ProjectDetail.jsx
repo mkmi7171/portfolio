@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { projects } from "../components/ProjectsArray";
 
@@ -9,10 +9,11 @@ const ProjectDetail = () => {
   const [animationDone, setAnimationDone] = useState(false);
 
   if (!project) return <div>Project not found</div>;
+  const nextProjectIndex = (projects.findIndex((p) => p.id === project.id) + 1) % projects.length;
+  const nextProject = projects[nextProjectIndex];
 
   useEffect(() => {
-    // Set the state to true after the animation duration
-    const timer = setTimeout(() => setAnimationDone(true), 1000); // Adjust duration to match animation
+    const timer = setTimeout(() => setAnimationDone(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,11 +30,10 @@ const ProjectDetail = () => {
 
   return (
     <div className="relative h-screen bg-rose-300 overflow-hidden flex justify-between items-center">
-      {/* Left Section */}
-      <div className="flex-[0.85]">
+      <div className="flex-[0.85] h-full pt-32 px-8">
         <h1 className="text-6xl font-safiro-reg-i number">{project.title}</h1>
         <p className="py-8 tracking-tight leading-5">
-          Improving lives and increasing happiness through diverse STEM talent leadership.
+         {project.description}
         </p>
         <div className="uppercase overflow-hidden relative group border w-28 h-8 border-gray-800 px-2 py-1 rounded-xl">
           <div className="flex items-center">
@@ -55,17 +55,14 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      {/* Animated Image Section */}
-      <div
-        className={`slider h-screen p-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-y-scroll" : ""
+      <div className={`slider h-screen p-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-y-scroll" : ""
           }`}
       >
-        {/* Motion Animated Image */}
         <motion.div
           className="flex items-center justify-center w-[580px] h-[320px]"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }} // Match timeout in useEffect
+          transition={{ duration: 1 }} 
         >
           <motion.div
             layoutId={`project-image-${project.id}`}
@@ -82,7 +79,6 @@ const ProjectDetail = () => {
           </motion.div>
         </motion.div>
 
-        {/* Mapped Images - Render After Animation */}
         {animationDone &&
           project.detailedPics.slice(1).map((image, index) => (
             <img
@@ -94,8 +90,7 @@ const ProjectDetail = () => {
           ))}
       </div>
 
-      {/* Right Section */}
-      <div className="flex-[0.85]">
+      <div className="flex-[0.85] pt-32 pb-4 h-full flex flex-col justify-between  items-center">
         <div className="flex items-center">
           <span className="text-6xl tracking-tight number">0{project.id}</span>
           <div className="w-0.5 mx-8 h-16 bg-gray-400 rotate-45"></div>
@@ -104,17 +99,32 @@ const ProjectDetail = () => {
         <div>
           <div>
             <p className="number font-bold font-safiro-reg-i">Role</p>
-            <span className="text-sm">Frontend</span>
+            <span className="text-sm">{project.detailInfo.role}</span>
           </div>
           <div>
             <p className="number font-bold font-safiro-reg-i">Technologies</p>
-            <span className="text-sm">React, Next, TypeScript</span>
+            <span className="text-sm">{project.detailInfo.techs}</span>
           </div>
           <div>
             <p className="number font-bold font-safiro-reg-i">Year</p>
-            <span className="text-sm">2022</span>
+            <span className="text-sm">{project.detailInfo.year}</span>
           </div>
         </div>
+        <Link to={`/projects/${nextProject?.id}`}>
+          <div
+            className="w-56 h-56 rounded-full border next-project"
+            style={{
+              backgroundImage: `url(${nextProject?.image || ''})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <motion.div
+              layoutId={`project-image-${nextProject?.id}`}
+              className="w-full h-full rounded-full overflow-hidden"
+            ></motion.div>
+          </div>
+        </Link>
       </div>
     </div>
   );

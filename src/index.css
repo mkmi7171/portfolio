@@ -85,8 +85,12 @@ body{
 }
 .project-page{
     background-color: var(--project-page-color);
-        background-image: linear-gradient(to right, #7f7f7f4e 0.5px, transparent 0.5px);
-            background-size: 200px 100%;
+    background-image: linear-gradient(to right, #7f7f7f4e 0.5px, transparent 0.5px);
+    background-size: 200px 100%;
+}
+.project-slider::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
 }
 
 .char{

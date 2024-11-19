@@ -32,69 +32,117 @@ export const projects = [
         image: OstiganCard,
         title: "Ostigan",
         id: 1,
+        description: 'Ostigan is a comprehensive digital marketplace application available for both Android and iOS platforms. Its features include: sell gift cards across various regions and currencies, Facilitate  international transactions, Wallet functionality with options for withdrawal, deposit, and transfer, In-App Ticketing System, Push Notification,Advanced Security like Multi-level authentication system, fingerprint login, and safe authorization',
         detailedPics: [
             { src: Ostigan5, alt: 'Ostigan feature 5' },
             { src: Ostigan1, alt: 'Ostigan feature 1' },
             { src: Ostigan2, alt: 'Ostigan feature 2' },
             { src: Ostigan3, alt: 'Ostigan feature 3' },
             { src: Ostigan4, alt: 'Ostigan feature 4' }
-        ]
+        ],
+        detailInfo: 
+            {
+                role: 'mobile application developer',
+                techs: 'React Native, Typescript, Redux, React Navigation, React Query, Firebase, JWT',
+                year: '2023-2024'
+            }
+        
     },
     {
         color: '#F07646',
         image: AtcCard,
         title: "ATC",
         id: 2,
+        description: 'ATC Holding is a parent company that encompasses several subsidiary holdings. The website was designed to represent the company and cater to its internal operational needs',
         detailedPics: [
             { src: Atc1, alt: 'ATC feature 1' },
             { src: Atc2, alt: 'ATC feature 2' },
             { src: Atc3, alt: 'ATC feature 3' },
             { src: Atc4, alt: 'ATC feature 4' },
-        ]
+        ],
+        detailInfo: 
+            {
+                role: 'mobile application developer',
+                techs: 'Next.js, Javascript',
+                year: '2022'
+            }
+        
     },
     {
         color: '#ECC77D',
         image: AgrotaminCard,
         title: "Agrotamin",
         id: 3,
+        description:'AgroTamin is a leading grain trading company and one of the top grain importers. The website showcases their operations, highlights their expertise in grain trading, and provides detailed information about their storage facilities',
         detailedPics: [
             { src: Agro1, alt: 'Agrotamin feature 1' },
             { src: Agro2, alt: 'Agrotamin feature 2' },
             { src: Agro3, alt: 'Agrotamin feature 3' },
             { src: Agro4, alt: 'Agrotamin feature 4' },
-        ]
+        ],
+        detailInfo: 
+            {
+                role: 'Frontend developer',
+                techs: 'Next.js, Javascript',
+                year: '2022'
+            }
+        
     },
     {
         color: '#F15B28',
         image: MehrayanCard,
         title: "Mehrayan",
         id: 4,
+        description:'Mehrayan is a technology firm that collaborates with designers and developers to create software, web and mobile applications for its business growth. One of their flagship products is Ostigan. The website reflects their mission and showcases their expertise.',
         detailedPics: [
             { src: Mehrayan1, alt: 'Mehrayan feature 1' },
             { src: Mehrayan2, alt: 'Mehrayan feature 2' },
             { src: Mehrayan3, alt: 'Mehrayan feature 3' },
             { src: Mehrayan4, alt: 'Mehrayan feature 4' },
-        ]
+        ],
+        detailInfo: 
+            {
+                role: 'Frontend developer',
+                techs: 'React.js, Javascript',
+                year: '2023'
+            }
+        
     },
     {
         color: '#7D01BC',
         image: MahsaCard,
         title: "Portfolio",
         id: 5,
+        description: 'This website is my personal portfolio. You are exploring it right now!',
         detailedPics: [
             { src: MahsaCard, alt: 'Portfolio feature 1' },
-        ]
+        ],
+        detailInfo: 
+            {
+                role: 'mobile application developer',
+                techs: 'React.js',
+                year: '2024'
+            }
+        
     },
     {
         color: '#7D01BC',
         image: OneandintlCard,
         title: "oneandintl",
         id: 6,
+        description:'One and Intel is a  well known trading company specializing in the importation of agricultural products, oils, and grains across multiple countries. The website highlights their import regions, the range of products they trade, and showcases their potential in the global market.',
         detailedPics: [
             { src: One1, alt: 'oneandintl feature 1' },
             { src: One2, alt: 'oneandintl feature 2' },
             { src: One3, alt: 'oneandintl feature 3' },
             { src: One4, alt: 'oneandintl feature 4' },
-        ]
+        ],
+        detailInfo: 
+            {
+                role: 'Frontend developer',
+                techs: 'React.js, Javascript',
+                year: '2022'
+            }
+        
     }
 ];
