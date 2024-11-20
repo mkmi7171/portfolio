@@ -14,6 +14,7 @@ export default function HomeSlider() {
   const customColors = [
    '227, 152, 159',
     '242, 191, 191',
+    '#e8e4dc'
   ];
 
   const containerVariants = {

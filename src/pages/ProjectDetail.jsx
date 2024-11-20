@@ -24,6 +24,7 @@ const ProjectDetail = () => {
   const customColors = [
     project.bubbleColor,
     project.bubbleColor,
+    project.color
   ];
 
 
@@ -66,7 +67,7 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      <div className={`z-40 slider h-screen pt-32 pb-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-y-scroll" : ""
+      <div className={`z-40 slider h-screen pt-32 pb-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-scroll" : ""
           }`}
       >
         <motion.div

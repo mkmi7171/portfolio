@@ -7,7 +7,7 @@ export const DarkModeProvider = ({ children }) => {
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
-    document.documentElement.classList.toggle('dark', !isDarkMode); // Optional for toggling dark class globally
+    document.documentElement.classList.toggle('dark', !isDarkMode); 
   };
 
   return (

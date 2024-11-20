@@ -44,7 +44,6 @@
     --secondary-text-color:#17191a;
     --circle-size: 50%;
     --blending: hard-light;
-    
 }
 
 
@@ -54,7 +53,6 @@
     --stripe-color: #5656564e;
     --text-color: #e5e7eb;
     --secondary-text-color: #ffffff;
-    --color-interactive: 0,0,0;
 }
 
 
@@ -414,7 +412,7 @@ right: -3px;
 
 .interactive {
     position: absolute;
-    background: var(--background-color);
+    background: var(--color-interactive);
     mix-blend-mode: normal;
     width: 30%;
     height: 50%;

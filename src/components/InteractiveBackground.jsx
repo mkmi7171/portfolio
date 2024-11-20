@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useDarkMode } from './DarkModeContext';
 
 const InteractiveBackground = ({ colors }) => {
+    const {isDarkMode} = useDarkMode()
+    console.log(isDarkMode)
     const interactiveRef = useRef(null);
     let curX = 0;
     let curY = 0;
@@ -38,6 +41,7 @@ const InteractiveBackground = ({ colors }) => {
             style={{
                 '--color1': colors[0],
                 '--color2': colors[1],
+                '--color-interactive': isDarkMode ? '#191818' : colors[2],
             }}
         >
             <div className="gradient-bg">

@@ -9,10 +9,11 @@ const Projects = () => {
     const customColors = [
         '224, 195, 159',
         '202, 144, 129',
+        '#e8e4dc'
     ];
     return (
         <div>
-            <InteractiveBackground colors={customColors}/>
+            <InteractiveBackground colors={customColors} />
             <ImageTrail />
             <HorizontalScrollCarousel />
         </div>
@@ -28,10 +29,9 @@ const HorizontalScrollCarousel = () => {
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
     
-
     return (
         <div ref={targetRef} className="relative h-[300vh]">
-            <div className="sticky top-0 flex h-screen pt-12 overflow-hidden">
+            <div className="sticky top-0 flex pt-12 overflow-hidden">
                 <motion.div style={{ x }} className="flex gap-8">
                     {projects.map((card, index) => {
                         return <Card card={card} index={index} key={card.id} />;

@@ -109,7 +109,7 @@ export const projects = [
     },
     {
         color: '#ebebfa',
-        bubbleColor: '195, 196, 239',
+        bubbleColor: '154, 155, 229',
         image: MehrayanCard,
         title: "Mehrayan",
         id: 4,
