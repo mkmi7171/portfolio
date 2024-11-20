@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { projects } from "../components/ProjectsArray";
+import InteractiveBackground from "../components/InteractiveBackground";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -17,6 +18,11 @@ const ProjectDetail = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const customColors = [
+    '225, 219, 239',
+    '242, 196, 219',
+  ];
+
   const Arrow = ({ className }) => {
     return (
       <div className={`transition-all duration-500 ease-in-out ${className}`}>
@@ -29,12 +35,11 @@ const ProjectDetail = () => {
   };
 
   return (
-    <div className="relative h-screen bg-rose-300 overflow-hidden flex justify-between items-center">
-      <div className="flex-[0.85] h-full pt-32 px-8">
+    <div className="relative h-screen overflow-hidden flex justify-between items-center" style={{backgroundColor: project.color}}>
+      <InteractiveBackground colors={customColors} />
+      <div className="flex-[0.85] h-full pt-32 px-8 z-40">
         <h1 className="text-6xl font-safiro-reg-i number">{project.title}</h1>
-        <p className="py-8 tracking-tight leading-5">
-         {project.description}
-        </p>
+        <div dangerouslySetInnerHTML={{ __html: project.description }} className="py-8 tracking-tight" />
         <div className="uppercase overflow-hidden relative group border w-28 h-8 border-gray-800 px-2 py-1 rounded-xl">
           <div className="flex items-center">
             <p className="absolute top-2 text-sm group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0">
@@ -55,14 +60,14 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      <div className={`slider h-screen p-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-y-scroll" : ""
+      <div className={`z-40 slider h-screen pt-32 pb-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-y-scroll" : ""
           }`}
       >
         <motion.div
           className="flex items-center justify-center w-[580px] h-[320px]"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }} 
+          // initial={{ opacity: 0, scale: 0.8 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 1 }} 
         >
           <motion.div
             layoutId={`project-image-${project.id}`}
@@ -90,13 +95,13 @@ const ProjectDetail = () => {
           ))}
       </div>
 
-      <div className="flex-[0.85] pt-32 pb-4 h-full flex flex-col justify-between  items-center">
+      <div className="z-40 flex-[0.85] flex flex-col gap-8 h-full pt-32 ml-12">
         <div className="flex items-center">
           <span className="text-6xl tracking-tight number">0{project.id}</span>
           <div className="w-0.5 mx-8 h-16 bg-gray-400 rotate-45"></div>
           <span className="text-6xl tracking-tight number">06</span>
         </div>
-        <div>
+        <div className="flex flex-col gap-3">
           <div>
             <p className="number font-bold font-safiro-reg-i">Role</p>
             <span className="text-sm">{project.detailInfo.role}</span>
@@ -110,22 +115,22 @@ const ProjectDetail = () => {
             <span className="text-sm">{project.detailInfo.year}</span>
           </div>
         </div>
-        <Link to={`/projects/${nextProject?.id}`}>
-          <div
-            className="w-56 h-56 rounded-full border next-project"
-            style={{
-              backgroundImage: `url(${nextProject?.image || ''})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <motion.div
-              layoutId={`project-image-${nextProject?.id}`}
-              className="w-full h-full rounded-full overflow-hidden"
-            ></motion.div>
-          </div>
-        </Link>
       </div>
+      {animationDone && <Link to={`/projects/${nextProject?.id}`} className=" z-40 absolute right-8 bottom-8">
+        <div
+          className="w-56 h-56 rounded-full next-project"
+          style={{
+            backgroundImage: `url(${nextProject?.image || ''})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <motion.div
+            layoutId={`project-image-${nextProject?.id}`}
+            className="w-full h-full rounded-full overflow-hidden"
+          ></motion.div>
+        </div>
+      </Link>}
     </div>
   );
 };

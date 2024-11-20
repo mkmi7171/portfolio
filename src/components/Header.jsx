@@ -46,10 +46,10 @@ export default function Header() {
 
     return (
         <div className="relative text-extralight">
-            <header className="w-full h-16 absolute flex justify-center items-center z-10">
-                <nav className="flex w-full h-full items-center px-4 justify-between">
+            <header className="w-full h-16 absolute flex justify-center items-center z-50">
+                <nav className="flex w-full h-full items-center px-8 justify-between">
 
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-20'>
                         <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 id="circlePath"
@@ -77,7 +77,7 @@ export default function Header() {
 
 
                         <div
-                            className={`w-5 h-5 rounded-full ${isDarkMode ? 'bg-white' : 'bg-black'} ml-24 cursor-pointer`}
+                            className={`w-5 h-5 rounded-full ${isDarkMode ? 'bg-white' : 'bg-black'} ml-20 cursor-pointer`}
                             onClick={toggleTheme}
                         ></div>
                     </div>

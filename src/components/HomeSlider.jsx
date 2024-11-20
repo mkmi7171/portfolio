@@ -12,7 +12,10 @@ export default function HomeSlider() {
     setTimeout(() => setIsLoaded(true), 100); 
   }, []);
 
-
+  const customColors = [
+   '227, 152, 159',
+    '242, 191, 191',
+  ];
 
   const containerVariants = {
     hidden: { opacity: 1 },
@@ -39,7 +42,7 @@ export default function HomeSlider() {
 
   return (
     <div className="h-screen flex flex-col justify-evenly relative items-center">
-      <InteractiveBackground />
+      <InteractiveBackground colors={customColors} />
       <div className="flex px-24 items-center w-fit z-10">
         <div className="relative homeSection">
           <div className="flex items-center w-1/2">
@@ -131,7 +134,7 @@ export default function HomeSlider() {
         </motion.div>
 
       </div>
-      <Socials ulClass={` absolute bottom-0 left-3 flex flex-col  gap-3 my-8`} />
+      <Socials ulClass={` absolute bottom-8 left-8 flex flex-col  gap-3`} />
     </div>
   )
 }

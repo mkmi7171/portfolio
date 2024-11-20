@@ -8,31 +8,45 @@ import Mehrayan1 from '../assets/projectsPic/mehrayan1.png'
 import Mehrayan2 from '../assets/projectsPic/mehrayan2.png'
 import Mehrayan3 from '../assets/projectsPic/mehrayan3.png'
 import Mehrayan4 from '../assets/projectsPic/mehrayan4.png'
+import Mehrayan5 from '../assets/projectsPic/mehrayan5.png'
 import Agro1 from '../assets/projectsPic/agro1.png'
 import Agro2 from '../assets/projectsPic/agro2.png'
 import Agro3 from '../assets/projectsPic/agro3.png'
 import Agro4 from '../assets/projectsPic/agro4.png'
+import Agro5 from '../assets/projectsPic/agro5.png'
 import Atc1 from '../assets/projectsPic/atc1.png'
 import Atc2 from '../assets/projectsPic/atc2.png'
 import Atc3 from '../assets/projectsPic/atc3.png'
 import Atc4 from '../assets/projectsPic/atc4.png'
+import Atc5 from '../assets/projectsPic/atc5.png'
 import One1 from '../assets/projectsPic/one1.png'
 import One2 from '../assets/projectsPic/one2.png'
 import One3 from '../assets/projectsPic/one3.png'
 import One4 from '../assets/projectsPic/one4.png'
+import One5 from '../assets/projectsPic/one5.png'
 import MehrayanCard from '../assets/mehrayanThumb.png'
 import AtcCard from '../assets/atcThumb.png'
 import OneandintlCard from '../assets/oneandintlThumb.png'
 import AgrotaminCard from '../assets/agroThumb.jpeg'
 import MahsaCard from '../assets/mahsa.jpeg'
+import Portfolio from '../assets/projectsPic/portfolio.png'
 
 export const projects = [
     {
-        color: '#00BC8D',
+        color: '#e6fff9',
         image: OstiganCard,
         title: "Ostigan",
         id: 1,
-        description: 'Ostigan is a comprehensive digital marketplace application available for both Android and iOS platforms. Its features include: sell gift cards across various regions and currencies, Facilitate  international transactions, Wallet functionality with options for withdrawal, deposit, and transfer, In-App Ticketing System, Push Notification,Advanced Security like Multi-level authentication system, fingerprint login, and safe authorization',
+        description: `Ostigan is a comprehensive digital marketplace application available for both Android and iOS platforms. Its features include: <ul class="list">
+        <li>Sell gift cards across various regions and currencies.</li>
+        <li>Facilitate international transactions.</li>
+        <li>Wallet with options for withdrawal, deposit, and transfer.</li>
+        <li>In-app ticketing system </li>
+        <li>Push notifications</li>
+        <li>Multi-level authentication system</li>
+        <li>Fingerprint login option </li>
+        <li>Secure authorization</li>
+    </ul> `,
         detailedPics: [
             { src: Ostigan5, alt: 'Ostigan feature 5' },
             { src: Ostigan1, alt: 'Ostigan feature 1' },
@@ -49,7 +63,7 @@ export const projects = [
         
     },
     {
-        color: '#F07646',
+        color: '#fdeee7',
         image: AtcCard,
         title: "ATC",
         id: 2,
@@ -59,17 +73,18 @@ export const projects = [
             { src: Atc2, alt: 'ATC feature 2' },
             { src: Atc3, alt: 'ATC feature 3' },
             { src: Atc4, alt: 'ATC feature 4' },
+            { src: Atc5, alt: 'ATC feature 5' },
         ],
         detailInfo: 
             {
-                role: 'mobile application developer',
+                role: 'Frontend Developer',
                 techs: 'Next.js, Javascript',
                 year: '2022'
             }
         
     },
     {
-        color: '#ECC77D',
+        color: '#fcf5e9',
         image: AgrotaminCard,
         title: "Agrotamin",
         id: 3,
@@ -79,17 +94,18 @@ export const projects = [
             { src: Agro2, alt: 'Agrotamin feature 2' },
             { src: Agro3, alt: 'Agrotamin feature 3' },
             { src: Agro4, alt: 'Agrotamin feature 4' },
+            { src: Agro5, alt: 'Agrotamin feature 5' },
         ],
         detailInfo: 
             {
-                role: 'Frontend developer',
+                role: 'Frontend Developer',
                 techs: 'Next.js, Javascript',
                 year: '2022'
             }
         
     },
     {
-        color: '#F15B28',
+        color: '#ebebfa',
         image: MehrayanCard,
         title: "Mehrayan",
         id: 4,
@@ -99,6 +115,7 @@ export const projects = [
             { src: Mehrayan2, alt: 'Mehrayan feature 2' },
             { src: Mehrayan3, alt: 'Mehrayan feature 3' },
             { src: Mehrayan4, alt: 'Mehrayan feature 4' },
+            { src: Mehrayan5, alt: 'Mehrayan feature 5' },
         ],
         detailInfo: 
             {
@@ -109,24 +126,24 @@ export const projects = [
         
     },
     {
-        color: '#7D01BC',
+        color: '#f5f3f0',
         image: MahsaCard,
         title: "Portfolio",
         id: 5,
         description: 'This website is my personal portfolio. You are exploring it right now!',
         detailedPics: [
-            { src: MahsaCard, alt: 'Portfolio feature 1' },
+            { src: Portfolio, alt: 'Portfolio feature 1' },
         ],
         detailInfo: 
             {
-                role: 'mobile application developer',
+                role: 'Frontend developer',
                 techs: 'React.js',
                 year: '2024'
             }
         
     },
     {
-        color: '#7D01BC',
+        color: '#fff9e6',
         image: OneandintlCard,
         title: "oneandintl",
         id: 6,
@@ -136,6 +153,7 @@ export const projects = [
             { src: One2, alt: 'oneandintl feature 2' },
             { src: One3, alt: 'oneandintl feature 3' },
             { src: One4, alt: 'oneandintl feature 4' },
+            { src: One5, alt: 'oneandintl feature 5' },
         ],
         detailInfo: 
             {

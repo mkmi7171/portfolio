@@ -6,9 +6,13 @@ import InteractiveBackground from "./InteractiveBackground";
 import {Link} from 'react-router-dom'
 
 const Projects = () => {
+    const customColors = [
+        '210, 159, 147',
+        '235, 218, 191',
+    ];
     return (
         <div>
-            <InteractiveBackground />
+            <InteractiveBackground colors={customColors}/>
             <ImageTrail />
             <HorizontalScrollCarousel />
         </div>

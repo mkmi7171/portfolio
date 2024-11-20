@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-
-const InteractiveBackground = () => {
+const InteractiveBackground = ({ colors }) => {
     const interactiveRef = useRef(null);
     let curX = 0;
     let curY = 0;
@@ -34,7 +33,13 @@ const InteractiveBackground = () => {
     }, []);
 
     return (
-        <div className="bubble-animation">
+        <div
+            className="bubble-animation"
+            style={{
+                '--color1': colors[0],
+                '--color2': colors[1],
+            }}
+        >
             <div className="gradient-bg">
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -51,8 +56,6 @@ const InteractiveBackground = () => {
                     <div className="g3"></div>
                     <div className="g4"></div>
                     <div className="g5"></div>
-                    <div className="g6"></div>
-                    <div className="g7"></div>
                     <div ref={interactiveRef} className="interactive"></div>
                 </div>
             </div>
@@ -61,4 +64,3 @@ const InteractiveBackground = () => {
 };
 
 export default InteractiveBackground;
-
