@@ -6,6 +6,7 @@ import Header from './components/Header'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from "framer-motion";
 import ProjectDetail from './pages/ProjectDetail'
+import {DarkModeProvider} from './components/DarkModeContext'
 import '@fontsource/manrope';
 
 const AnimatedRoutes = () => {
@@ -25,25 +26,27 @@ const AnimatedRoutes = () => {
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
-      {/* <AnimatedCursor
-        innerSize={8}
-        outerSize={50}
-        outerScale={1.5}
-        outerAlpha={0.3}
-        innerScale={1}
-        outerStyle={{
-          border: '0.5px solid #ff56a0',
-          backgroundColor: 'transparent'
-        }}
-        innerStyle={{
-          backgroundColor: '#ff56a0'
-        }}
-        clickables={['a', 'button', 'input', 'textarea']}
-      /> */}
-      <AnimatePresence mode="wait">
-        <AnimatedRoutes />
-      </AnimatePresence>
+      <DarkModeProvider> {/* Wrap the app with DarkModeProvider */}
+        <Header />
+        {/* <AnimatedCursor
+          innerSize={8}
+          outerSize={50}
+          outerScale={1.5}
+          outerAlpha={0.3}
+          innerScale={1}
+          outerStyle={{
+            border: '0.5px solid #ff56a0',
+            backgroundColor: 'transparent'
+          }}
+          innerStyle={{
+            backgroundColor: '#ff56a0'
+          }}
+          clickables={['a', 'button', 'input', 'textarea']}
+        /> */}
+        <AnimatePresence mode="wait">
+          <AnimatedRoutes />
+        </AnimatePresence>
+      </DarkModeProvider>
     </BrowserRouter>
 
   )

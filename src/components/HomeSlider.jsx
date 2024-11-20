@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { calcLength, motion, px } from 'framer-motion';
-import Cube from './Cube';
 import Mahsa from '../assets/mahsa.jpeg';
 import Socials from './Socials';
 import InteractiveBackground from './InteractiveBackground';

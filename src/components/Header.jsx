@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useDarkMode} from './DarkModeContext'
 import switchSound from '../assets/transition-base.mp3';
 
 export default function Header() {
     const location = "Toronto";
     const [currentTime, setCurrentTime] = useState("");
-    const [isDarkMode, setIsDarkMode] = useState(
-        localStorage.getItem('theme') === 'dark'
-    );
+
+    const { isDarkMode, toggleDarkMode } = useDarkMode();
 
     useEffect(() => {
         const updateTime = () => {
@@ -26,22 +26,10 @@ export default function Header() {
         return () => clearInterval(timer);
     }, []);
 
-    // Update theme based on `isDarkMode`
-    useEffect(() => {
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    }, [isDarkMode]);
-
-    const toggleTheme = () => {
+    const handleToggleTheme = () => {
         const audio = new Audio(switchSound);
         audio.play();
-
-        setIsDarkMode(!isDarkMode);
+        toggleDarkMode(); 
     };
 
     return (
@@ -68,17 +56,15 @@ export default function Header() {
                         </svg>
                         <span className='text-xs uppercase'>{`${location}, ${currentTime}`}</span>
                     </div>
-                   
-                    {/* Navigation Links */}
+
                     <div className="flex text-xs uppercase h-full self-center items-center">
                         <Link to="/"><p>Home</p></Link>
                         <span className="mx-2">/</span>
                         <Link to="/projects">Projects</Link>
 
-
                         <div
                             className={`w-5 h-5 rounded-full ${isDarkMode ? 'bg-white' : 'bg-black'} ml-20 cursor-pointer`}
-                            onClick={toggleTheme}
+                            onClick={handleToggleTheme}
                         ></div>
                     </div>
                 </nav>

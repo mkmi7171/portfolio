@@ -33,7 +33,8 @@ import Portfolio from '../assets/projectsPic/portfolio.png'
 
 export const projects = [
     {
-        color: '#e6fff9',
+        color: '#f3fff7',
+        bubbleColor: '131, 251, 221',
         image: OstiganCard,
         title: "Ostigan",
         id: 1,
@@ -64,6 +65,7 @@ export const projects = [
     },
     {
         color: '#fdeee7',
+        bubbleColor: '245, 168, 137',
         image: AtcCard,
         title: "ATC",
         id: 2,
@@ -85,6 +87,7 @@ export const projects = [
     },
     {
         color: '#fcf5e9',
+        bubbleColor: '230, 205, 130',
         image: AgrotaminCard,
         title: "Agrotamin",
         id: 3,
@@ -106,6 +109,7 @@ export const projects = [
     },
     {
         color: '#ebebfa',
+        bubbleColor: '195, 196, 239',
         image: MehrayanCard,
         title: "Mehrayan",
         id: 4,
@@ -127,6 +131,7 @@ export const projects = [
     },
     {
         color: '#f5f3f0',
+        bubbleColor: '240, 199, 199',
         image: MahsaCard,
         title: "Portfolio",
         id: 5,
@@ -143,7 +148,8 @@ export const projects = [
         
     },
     {
-        color: '#fff9e6',
+        color: '#fff1e6',
+        bubbleColor: '255, 194, 145',
         image: OneandintlCard,
         title: "oneandintl",
         id: 6,

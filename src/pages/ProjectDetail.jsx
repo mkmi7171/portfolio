@@ -3,11 +3,14 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { projects } from "../components/ProjectsArray";
 import InteractiveBackground from "../components/InteractiveBackground";
+import { useDarkMode } from "../components/DarkModeContext";
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
   const [animationDone, setAnimationDone] = useState(false);
+
+  const { isDarkMode } = useDarkMode(); 
 
   if (!project) return <div>Project not found</div>;
   const nextProjectIndex = (projects.findIndex((p) => p.id === project.id) + 1) % projects.length;
@@ -19,9 +22,11 @@ const ProjectDetail = () => {
   }, []);
 
   const customColors = [
-    '225, 219, 239',
-    '242, 196, 219',
+    project.bubbleColor,
+    project.bubbleColor,
   ];
+
+
 
   const Arrow = ({ className }) => {
     return (
@@ -35,7 +40,8 @@ const ProjectDetail = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden flex justify-between items-center" style={{backgroundColor: project.color}}>
+    <div className="relative h-screen overflow-hidden flex justify-between items-center"
+      style={{ backgroundColor: isDarkMode ? "#191818" : project.color }}>
       <InteractiveBackground colors={customColors} />
       <div className="flex-[0.85] h-full pt-32 px-8 z-40">
         <h1 className="text-6xl font-safiro-reg-i number">{project.title}</h1>

@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom'
 
 const Projects = () => {
     const customColors = [
-        '210, 159, 147',
-        '235, 218, 191',
+        '224, 195, 159',
+        '202, 144, 129',
     ];
     return (
         <div>
