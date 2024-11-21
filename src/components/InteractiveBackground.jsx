@@ -37,14 +37,13 @@ const InteractiveBackground = ({ colors }) => {
 
     return (
         <div
-            className="bubble-animation"
             style={{
                 '--color1': colors[0],
                 '--color2': colors[1],
                 '--color-interactive': isDarkMode ? '#191818' : colors[2],
             }}
         >
-            <div className="gradient-bg">
+            <div className="gradient-bg h-screen">
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="goo">
@@ -54,7 +53,7 @@ const InteractiveBackground = ({ colors }) => {
                         </filter>
                     </defs>
                 </svg>
-                <div className="gradients-container">
+                <div className="gradients-container h-full">
                     <div className="g1"></div>
                     <div className="g2"></div>
                     <div className="g3"></div>

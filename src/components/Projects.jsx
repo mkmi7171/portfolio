@@ -1,20 +1,13 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { projects } from "./ProjectsArray";
-import { ImageTrail } from "./MouseImageTrail";
-import InteractiveBackground from "./InteractiveBackground";
+
 import {Link} from 'react-router-dom'
 
 const Projects = () => {
-    const customColors = [
-        '224, 195, 159',
-        '202, 144, 129',
-        '#e8e4dc'
-    ];
+
     return (
         <div>
-            <InteractiveBackground colors={customColors} />
-            <ImageTrail />
             <HorizontalScrollCarousel />
         </div>
     );
@@ -30,7 +23,7 @@ const HorizontalScrollCarousel = () => {
 
     
     return (
-        <div ref={targetRef} className="relative h-[300vh]">
+        <div className="relative h-[300vh]">
             <div className="sticky top-0 flex pt-12 overflow-hidden">
                 <motion.div style={{ x }} className="flex gap-8">
                     {projects.map((card, index) => {

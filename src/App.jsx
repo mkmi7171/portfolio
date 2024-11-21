@@ -1,4 +1,4 @@
-
+import { useEffect } from 'react'
 import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
 import AnimatedCursor from "react-animated-cursor"
@@ -11,6 +11,7 @@ import '@fontsource/manrope';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+  
 
   return (
     <AnimatePresence mode="wait">
@@ -23,11 +24,22 @@ const AnimatedRoutes = () => {
   );
 };
 
+
+// const ScrollToTop = () => {
+//   const { pathname } = useLocation();
+
+//  useEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, [pathname]);
+
+//   return null;
+// };
 export default function App() {
   return (
     <BrowserRouter>
       <DarkModeProvider> {/* Wrap the app with DarkModeProvider */}
         <Header />
+
         {/* <AnimatedCursor
           innerSize={8}
           outerSize={50}

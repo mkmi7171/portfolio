@@ -1,5 +1,6 @@
 import Front from '../assets/front.png'
 import Mobile from '../assets/mobile.png'
+import {Link} from 'react-router-dom'
 
 export default function Expertise() {
   const Arrow = ({ className }) => {
@@ -20,25 +21,26 @@ export default function Expertise() {
             <span className="text-[#6b47e3] font-safiro-reg">React.js, Next.js</span> 
             <h3 className=' text-2xl uppercase leading-relaxed font-safiro-reg'>Frontend Development</h3>
               <p className='my-5 text-lg'>Over 4 years of development experience in React and Next.js frameworks.</p>
-            <div className='uppercase overflow-hidden relative group border w-28 h-8 border-gray-500 px-2 py-1 rounded-xl'>
-              <div className="flex items-center">
-                <p className='absolute top-2 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
-                  Projects
+            <Link to='/projects' className='cursor-pointer overflow-hidden relative group border w-28 h-8 border-gray-500 flex items-center rounded-xl'>
+              <div className='w-28 h-6 relative overflow-hidden px-2 py-1'>
+                <div className="flex items-center">
+                  <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-500 ease-in-out group-hover:opacity-0'>
+                    PROJECTS
+                  </p>
+                  <Arrow className={`absolute top-1 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`} />
+                </div>
+                <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
+                  PROJECTS
                 </p>
-                <Arrow className={`absolute top-2 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`} />
+                <Arrow className={'absolute top-full right-4 scale-50 group-hover:top-1 group-hover:right-1 group-hover:scale-100'} />
               </div>
-              <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1.5 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100'>
-                Projects
-              </p>
-              <Arrow className={'absolute top-full right-4 scale-50 group-hover:top-2 group-hover:right-1 group-hover:scale-100'} />
-            </div>
+            </Link>
           </div>
 
         </div>
         <div className='lg:flex flex-row-reverse justify-between h-[36rem] relative' style={{perspective:1000}}>
           <div className='md:h-[85%] lg:max-w-[55%] color-circle green-circle flex justify-center relative after:w-52 after:h-1/2 after:rounded-tl-3xl '>
-            <img src={Mobile} className='object-contain relative z-10 transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-3' />
-            {/* <div className='w-36 h-72 absolute bg-white border border-gray-600 rounded-3xl bottom-36 left-[45%] rotate-[22deg]'></div> */}
+            <img src={Mobile} className='object-contain relative z-10 transition-transform duration-500 ease-in-out hover:scale-105 hover:rotate-3' />
           </div>
           <div className='rounded-3xl w-2/5 p-4 mt-6'>
             <span className="text-[#09bc8a] font-safiro-reg ">React Native,</span> 
@@ -46,18 +48,20 @@ export default function Expertise() {
             <p className='my-5 text-lg'>
                 Skilled in developing hybrid mobile apps and cross-platform solutions using React Native framework.
             </p>
-            <div className='uppercase overflow-hidden relative group border w-28 h-8 border-gray-500 px-2 py-1 rounded-xl'>
-              <div className="flex items-center">
-                <p className='absolute top-2 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0'>
-                  Projects
+            <Link to='/projects' className='cursor-pointer overflow-hidden relative group border w-28 h-8 border-gray-500 flex items-center rounded-xl'>
+              <div className='w-28 h-6 relative overflow-hidden px-2 py-1'>
+                <div className="flex items-center">
+                  <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-500 ease-in-out group-hover:opacity-0'>
+                    PROJECTS
+                  </p>
+                  <Arrow className={`absolute top-1 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`} />
+                </div>
+                <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
+                  PROJECTS
                 </p>
-                <Arrow className={`absolute top-2 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`} />
+                <Arrow className={'absolute top-full right-4 scale-50 group-hover:top-1 group-hover:right-1 group-hover:scale-100'} />
               </div>
-              <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1.5 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100'>
-                Projects
-              </p>
-              <Arrow className={'absolute top-full right-4 scale-50 group-hover:top-2 group-hover:right-1 group-hover:scale-100'} />
-            </div>
+            </Link>
           </div>
         </div>
 

@@ -335,12 +335,10 @@ right: -3px;
 .gradients-container {
     filter: blur(70px);
     width: 100%;
-    height: 100%;
 }
 
 .gradient-bg {
     width: 100vw;
-    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;

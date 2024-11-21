@@ -38,22 +38,24 @@ export default function Header() {
                 <nav className="flex w-full h-full items-center px-8 justify-between">
 
                     <div className='flex items-center gap-20'>
-                        <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                id="circlePath"
-                                fill="none"
-                                strokeWidth="4"
-                                d="
+                        <Link to={'/'}>
+                            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    id="circlePath"
+                                    fill="none"
+                                    strokeWidth="4"
+                                    d="
                                 M 10, 70
                                 a 40,40 0 1,1 80,0
                                 a 40,40 0 1,1 -80,0"
-                            />
-                            <text id="text" fontFamily="monospace" fontSize="16" fill="#505050">
-                                <textPath id="textPath" href="#circlePath">
-                                    Mahsa Karami Mahsa Karami
-                                </textPath>
-                            </text>
-                        </svg>
+                                />
+                                <text id="text" fontFamily="monospace" fontSize="16" fill="#505050">
+                                    <textPath id="textPath" href="#circlePath">
+                                        Mahsa Karami Mahsa Karami
+                                    </textPath>
+                                </text>
+                            </svg>
+                        </Link>
                         <span className='text-xs uppercase'>{`${location}, ${currentTime}`}</span>
                     </div>
 

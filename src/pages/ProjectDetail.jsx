@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { projects } from "../components/ProjectsArray";
 import InteractiveBackground from "../components/InteractiveBackground";
 import { useDarkMode } from "../components/DarkModeContext";
+import AnimatedWrapper from "../components/AimatedWrapper";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -45,26 +46,33 @@ const ProjectDetail = () => {
       style={{ backgroundColor: isDarkMode ? "#191818" : project.color }}>
       <InteractiveBackground colors={customColors} />
       <div className="flex-[0.85] h-full pt-32 px-8 z-40">
-        <h1 className="text-6xl font-safiro-reg-i number">{project.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: project.description }} className="py-8 tracking-tight" />
-        <div className="uppercase overflow-hidden relative group border w-28 h-8 border-gray-800 px-2 py-1 rounded-xl">
-          <div className="flex items-center">
-            <p className="absolute top-2 text-sm group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0">
-              Visit
+        <AnimatedWrapper duration={1} delay={0.2}>
+          <h1 className="text-6xl font-safiro-reg-i number">{project.title}</h1>
+        </AnimatedWrapper>
+        <AnimatedWrapper duration={1} delay={0.3}>
+          <div dangerouslySetInnerHTML={{ __html: project.description }} className="py-8 tracking-tight" />
+        </AnimatedWrapper>
+        <AnimatedWrapper duration={1} delay={0.4}>
+          <div className="uppercase overflow-hidden relative group border w-28 h-8 border-gray-800 px-2 py-1 rounded-xl">
+            <div className="flex items-center">
+              <p className="absolute top-2 text-sm group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0">
+                Visit
+              </p>
+              <Arrow
+                className={`absolute top-2 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`}
+              />
+            </div>
+            <p className="text-sm absolute -bottom-[50%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+              visit
             </p>
             <Arrow
-              className={`absolute top-2 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`}
+              className={
+                "absolute top-full right-4 scale-50 group-hover:top-2 group-hover:right-1 group-hover:scale-100"
+              }
             />
           </div>
-          <p className="text-sm absolute -bottom-[50%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100">
-            visit
-          </p>
-          <Arrow
-            className={
-              "absolute top-full right-4 scale-50 group-hover:top-2 group-hover:right-1 group-hover:scale-100"
-            }
-          />
-        </div>
+        </AnimatedWrapper>
+
       </div>
 
       <div className={`z-40 slider h-screen pt-32 pb-8 w-[40%] flex-[1.3] ${animationDone ? "overflow-scroll" : ""
@@ -93,35 +101,43 @@ const ProjectDetail = () => {
 
         {animationDone &&
           project.detailedPics.slice(1).map((image, index) => (
-            <img
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className="w-[580px] h-[320px] object-cover object-center rounded-2xl mt-8"
-            />
+              <AnimatedWrapper duration={0.8}>
+              <img
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                className="w-[580px] h-[320px] object-cover object-center rounded-2xl mt-8"
+              />
+        </AnimatedWrapper>
+
           ))}
       </div>
 
-      <div className="z-40 flex-[0.85] flex flex-col gap-8 h-full pt-32 ml-12">
-        <div className="flex items-center">
-          <span className="text-6xl tracking-tight number">0{project.id}</span>
-          <div className="w-0.5 mx-8 h-16 bg-gray-400 rotate-45"></div>
-          <span className="text-6xl tracking-tight number">06</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div>
-            <p className="number font-bold font-safiro-reg-i">Role</p>
-            <span className="text-sm">{project.detailInfo.role}</span>
+      <div className="pr-8 z-40 flex-[0.85] flex flex-col gap-8 h-full pt-32 ml-12">
+        <AnimatedWrapper duration={1} delay={0.2}>
+          <div className="flex items-center">
+            <span className="text-6xl tracking-tight number">0{project.id}</span>
+            <div className="w-0.5 mx-8 h-16 bg-gray-400 rotate-45"></div>
+            <span className="text-6xl tracking-tight number">06</span>
           </div>
-          <div>
-            <p className="number font-bold font-safiro-reg-i">Technologies</p>
-            <span className="text-sm">{project.detailInfo.techs}</span>
+        </AnimatedWrapper>
+        <AnimatedWrapper duration={1} delay={0.3}>
+          <div className="flex flex-col gap-3">
+            <div>
+              <p className="number font-bold font-safiro-reg-i">Role</p>
+              <span className="text-sm">{project.detailInfo.role}</span>
+            </div>
+            <div>
+              <p className="number font-bold font-safiro-reg-i">Technologies</p>
+              <span className="text-sm">{project.detailInfo.techs}</span>
+            </div>
+            <div>
+              <p className="number font-bold font-safiro-reg-i">Year</p>
+              <span className="text-sm">{project.detailInfo.year}</span>
+            </div>
           </div>
-          <div>
-            <p className="number font-bold font-safiro-reg-i">Year</p>
-            <span className="text-sm">{project.detailInfo.year}</span>
-          </div>
-        </div>
+        </AnimatedWrapper>
+
       </div>
       {animationDone && <Link to={`/projects/${nextProject?.id}`} className=" z-40 absolute right-8 bottom-8">
         <div
