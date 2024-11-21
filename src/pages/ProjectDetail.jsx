@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { projects } from "../components/ProjectsArray";
 import InteractiveBackground from "../components/InteractiveBackground";
@@ -80,16 +80,13 @@ const ProjectDetail = () => {
       >
         <motion.div
           className="flex items-center justify-center w-[580px] h-[320px]"
-          // initial={{ opacity: 0, scale: 0.8 }}
-          // animate={{ opacity: 1, scale: 1 }}
-          // transition={{ duration: 1 }} 
         >
           <motion.div
             layoutId={`project-image-${project.id}`}
-            className="relative w-[580px] h-[320px] rounded-lg overflow-hidden"
+            className="relative w-[580px] h-[320px] overflow-hidden "
             initial={{ borderRadius: "50%" }}
             animate={{ borderRadius: "16px" }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
           >
             <img
               src={project.detailedPics[0].src}
@@ -113,7 +110,7 @@ const ProjectDetail = () => {
           ))}
       </div>
 
-      <div className="pr-8 z-40 flex-[0.85] flex flex-col gap-8 h-full pt-32 ml-12">
+      <div className="z-40 flex-[0.85] flex flex-col gap-8 h-full pt-32 ml-12">
         <AnimatedWrapper duration={1} delay={0.2}>
           <div className="flex items-center">
             <span className="text-6xl tracking-tight number">0{project.id}</span>
@@ -151,6 +148,9 @@ const ProjectDetail = () => {
           <motion.div
             layoutId={`project-image-${nextProject?.id}`}
             className="w-full h-full rounded-full overflow-hidden"
+            initial={{ borderRadius: "50%" }}
+            animate={{ borderRadius: "16px" }}
+            transition={{ duration: 0.6 }}
           ></motion.div>
         </div>
       </Link>}

@@ -18,6 +18,7 @@ const HorizontalScrollCarousel = () => {
     const { scrollYProgress } = useScroll({
         target: targetRef,
     });
+    
 
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 

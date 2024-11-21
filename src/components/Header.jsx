@@ -35,9 +35,9 @@ export default function Header() {
     return (
         <div className="relative text-extralight">
             <header className="w-full h-16 absolute flex justify-center items-center z-50">
-                <nav className="flex w-full h-full items-center px-8 justify-between">
+                <nav className="flex w-full h-full items-center px-4 md:px-8 justify-between">
 
-                    <div className='flex items-center gap-20'>
+                    <div className='flex items-center md:gap-10 lg:gap-20'>
                         <Link to={'/'}>
                             <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -56,7 +56,7 @@ export default function Header() {
                                 </text>
                             </svg>
                         </Link>
-                        <span className='text-xs uppercase'>{`${location}, ${currentTime}`}</span>
+                        <span className='hidden md:flex text-xs uppercase'>{`${location}, ${currentTime}`}</span>
                     </div>
 
                     <div className="flex text-xs uppercase h-full self-center items-center">
@@ -65,7 +65,7 @@ export default function Header() {
                         <Link to="/projects">Projects</Link>
 
                         <div
-                            className={`w-5 h-5 rounded-full ${isDarkMode ? 'bg-white' : 'bg-black'} ml-20 cursor-pointer`}
+                            className={`w-5 h-5 rounded-full ${isDarkMode ? 'bg-white' : 'bg-black'} ml-10 lg:ml-20 cursor-pointer`}
                             onClick={handleToggleTheme}
                         ></div>
                     </div>
