@@ -65,16 +65,9 @@ body{
     overflow-x: hidden;
 }
 
-/* .home{
-        background-color: var(--background-color);
-    background-image: linear-gradient(to right, #7f7f7f4e 0.5px, transparent 0.5px);
-        background-size: 200px 100%;
+.home, .project-page{
+    overflow-x: hidden;
 }
-.project-page{
-        background-color: var(--background-color);
-    background-image: linear-gradient(to right, #7f7f7f4e 0.5px, transparent 0.5px);
-    background-size: 200px 100%;
-} */
 .project-slider::-webkit-scrollbar {
     display: none;
 }
@@ -192,13 +185,18 @@ font-family: 'Mark pro black';
 .color-circle::before{
 content: '';
     position: absolute;
-    top: 0;
-    left: 20%;
-    width: 50%;
+    top: 5%;
+    left: 25%;
+    width: 55%;
     height: 50%;
     filter: blur(110px);
     border-radius: 100%;
     z-index: -1;
+}
+.contact-circle::before,.contact-circle::after {
+    content: '';
+        filter: blur(50px);
+        z-index: -1;
 }
 .green-circle::before{
     background-color: rgb(9, 188, 138);
@@ -225,7 +223,7 @@ content: '';
     border-radius:0 2rem;
     border-bottom: 2px solid rgb(107, 71, 227);
     border-left: 2px solid rgb(107, 71, 227);
-    transform: rotatez(-153deg) rotateY(-29deg) rotateX(55deg) translateY(-65px) translateX(-98px);
+    transform: rotatez(-153deg) rotateY(-29deg) rotateX(55deg) translateY(-100px) translateX(-147px);
 }
 
 

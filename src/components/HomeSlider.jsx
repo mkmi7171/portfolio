@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { calcLength, motion, px } from 'framer-motion';
+import { motion} from 'framer-motion';
 import Mahsa from '../assets/mahsa.jpeg';
 import Socials from './Socials';
 import InteractiveBackground from './InteractiveBackground';
+import { useDarkMode } from './DarkModeContext';
 
 export default function HomeSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const {isDarkMode} = useDarkMode()
 
   useEffect(() => {
     setTimeout(() => setIsLoaded(true), 100); 
@@ -47,7 +49,7 @@ export default function HomeSlider() {
         <div className="relative homeSection flex-1">
           <div className="flex items-center w-1/2">
               <motion.h1
-              className="text-[3.5rem] md:text-[4.5rem] xl:text-[6rem] font-[500] uppercase leading-[0.9]"
+              className="text-[3rem] sm:text-[3.5rem] md:text-[4rem] xl:text-[6rem] font-[500] uppercase leading-[0.9]"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -70,20 +72,20 @@ export default function HomeSlider() {
                   Mahsa
                 </motion.div>
               </motion.h1>
-            <div className="w-fit hidden md:flex mr-8">
+            <div className="w-fit hidden lg:flex mr-8">
               <svg viewBox="0 0 115 115" xmlns="http://www.w3.org/2000/svg">
                 <path id="circlePath" fill="none" strokeWidth="4" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
-                <text fontFamily="monospace" fontSize="16" fill="black">
+                <text fontFamily="monospace" fontSize="16" fill={isDarkMode ? '#e5e7eb' :'rgb(80,80,80)'}>
                   <textPath href="#circlePath">creative Developer</textPath>
                 </text>
               </svg>
             </div>
           </div>
-          <p className='flex-1 w-2/3 xl:w-1/2 leading-relaxed tracking-wide my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
+          <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-md leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
         </div>
-        <div className='flex-1 md:flex lg:w-3/4 h-full gap-8 pt-12'>
-            <h2 className='font-bold mb-5 md:mb-0 text-2xl font-safiro-reg-i'>Collabs</h2>
-          <div className='text flex flex-col gap-4'>
+        <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 md:pt-12'>
+            <h2 className='font-bold mb-5 md:mb-0 text-xl md:text-2xl font-safiro-reg-i'>Collabs</h2>
+          <div className='text flex flex-col gap-2 md:gap-4'>
             <div className='gap-3 flex flex-col'>
               <span className='font-black'>Mehrayan <span className='text-xs mx-3'>2022-2024</span></span>
               <span className='text-sm'>Frontend and Mobile App developer</span>
