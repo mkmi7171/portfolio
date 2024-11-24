@@ -4,6 +4,7 @@ import Mahsa from '../assets/mahsa.jpeg';
 import Socials from './Socials';
 import InteractiveBackground from './InteractiveBackground';
 import { useDarkMode } from './DarkModeContext';
+import AnimatedWrapper from './AimatedWrapper';
 
 export default function HomeSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -81,23 +82,31 @@ export default function HomeSlider() {
               </svg>
             </div>
           </div>
-          <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-md leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
+          <AnimatedWrapper duration={0.8} delay={0.4}>
+            <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-md leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
+          </AnimatedWrapper>
         </div>
         <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 md:pt-12'>
             <h2 className='font-bold mb-5 md:mb-0 text-xl md:text-2xl font-safiro-reg-i'>Collabs</h2>
           <div className='text flex flex-col gap-2 md:gap-4'>
-            <div className='gap-3 flex flex-col'>
-              <span className='font-black'>Mehrayan <span className='text-xs mx-3'>2022-2024</span></span>
-              <span className='text-sm'>Frontend and Mobile App developer</span>
-            </div>
-            <div className='gap-3 flex flex-col'>
-              <span className='font-black'>Aran Agency<span className='text-xs mx-3'>2020-2022</span></span>
-              <span className='text-sm'>React developer</span>
-            </div>
-            <div className='gap-3 flex flex-col'>
-              <span className='font-black'>Manzoome Negaran Net<span className='text-xs mx-3'>2018-2020</span></span>
-              <span className='text-sm'>Web developer</span>
-            </div>
+            <AnimatedWrapper duration={0.6}>
+              <div className='gap-3 flex flex-col'>
+                <span className='font-black'>Mehrayan <span className='text-xs mx-3'>2022-2024</span></span>
+                <span className='text-sm'>Frontend and Mobile App developer</span>
+              </div>
+            </AnimatedWrapper>
+            <AnimatedWrapper duration={0.7} delay={0.1}>
+              <div className='gap-3 flex flex-col'>
+                <span className='font-black'>Aran Agency<span className='text-xs mx-3'>2020-2022</span></span>
+                <span className='text-sm'>React developer</span>
+              </div>
+            </AnimatedWrapper>
+            <AnimatedWrapper duration={0.8} delay={0.2}>
+              <div className='gap-3 flex flex-col'>
+                <span className='font-black'>Manzoome Negaran Net<span className='text-xs mx-3'>2018-2020</span></span>
+                <span className='text-sm'>Web developer</span>
+              </div>
+          </AnimatedWrapper>
           </div>
         </div>
       </div>

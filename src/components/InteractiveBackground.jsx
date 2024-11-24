@@ -3,7 +3,6 @@ import { useDarkMode } from './DarkModeContext';
 
 const InteractiveBackground = ({ colors }) => {
     const {isDarkMode} = useDarkMode()
-    console.log(isDarkMode)
     const interactiveRef = useRef(null);
     let curX = 0;
     let curY = 0;

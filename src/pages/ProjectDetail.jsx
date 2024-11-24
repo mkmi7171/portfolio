@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useParams, Link, } from "react-router-dom";
+import { useParams, Link,useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { projects } from "../components/ProjectsArray";
 import InteractiveBackground from "../components/InteractiveBackground";
@@ -8,6 +8,8 @@ import AnimatedWrapper from "../components/AimatedWrapper";
 
 const ProjectDetail = () => {
   const { id } = useParams();
+  const location = useLocation();
+  const { positionY = 0 } = location.state || {}; 
   const project = projects.find((p) => p.id === parseInt(id));
   const [animationDone, setAnimationDone] = useState(false);
 
@@ -84,8 +86,8 @@ const ProjectDetail = () => {
           <motion.div
             layoutId={`project-image-${project.id}`}
             className="relative w-[580px] h-[320px] overflow-hidden "
-            initial={{ borderRadius: "50%" }}
-            animate={{ borderRadius: "16px" }}
+            initial={{ y: positionY, borderRadius: "50%" }}
+            animate={{ y: 0, borderRadius: "16px" }}
             transition={{ duration: 0.6 }}
           >
             <img

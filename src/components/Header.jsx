@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {useDarkMode} from './DarkModeContext'
 import switchSound from '../assets/transition-base.mp3';
 
 export default function Header() {
+    const { pathname } = useLocation(); 
+
     const location = "Toronto";
     const [currentTime, setCurrentTime] = useState("");
 
@@ -34,7 +36,7 @@ export default function Header() {
 
     return (
         <div className="relative text-extralight">
-            <header className="w-full h-16 absolute flex justify-center items-center z-50">
+            <header className={`w-full h-16 ${pathname === "/"? 'absolute': 'fixed'} flex justify-center items-center z-50`}>
                 <nav className="flex w-full h-full items-center px-4 md:px-8 justify-between">
 
                     <div className='flex items-center md:gap-10 lg:gap-20'>

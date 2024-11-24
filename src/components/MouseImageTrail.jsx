@@ -20,7 +20,7 @@ export const ImageTrail = () => {
             opacity: 1,
             transition: {
                 staggerChildren: 0.08,
-                when: "afterChildren", // Wait for children to finish
+                when: "afterChildren", 
             },
         },
     };
@@ -56,7 +56,7 @@ export const ImageTrail = () => {
             ]}
             ready={isTextAnimationComplete}
         >
-            <div className="flex h-screen items-center px-8 justify-between">
+            <div className="flex h-[65vh] items-center px-8 justify-between">
                 <p className="text-xs font-safiro-reg-i">last projects</p>
                 <div className="gap-8 flex flex-col justify-center items-center p-3">
                     <motion.h1
@@ -78,7 +78,7 @@ export const ImageTrail = () => {
                         ))}
                     </motion.h1>
                     <p className="w-1/2 tracking-tighter leading-5 font-safiro-reg font-light">
-                        in the following projects technologies that used is: react native, react.js and next.js
+                        Following are some of my recent projects in frontend and mobile application development. Scroll down to explore more!
                     </p>
                 </div>
                 <p className="text-xs font-safiro-reg-i">scroll</p>
@@ -92,7 +92,7 @@ const MouseImageTrail = ({
     images,
     renderImageBuffer,
     rotationRange,
-    ready, // Add ready prop
+    ready, 
 }) => {
     const [scope, animate] = useAnimate();
     const lastRenderPosition = useRef({ x: 0, y: 0 });
@@ -100,7 +100,7 @@ const MouseImageTrail = ({
     const movementCounter = useRef(0);
 
     const handleMouseMove = (e) => {
-        if (!ready) return; // Skip if not ready
+        if (!ready) return; 
 
         const { clientX, clientY } = e;
         const distance = calculateDistance(
