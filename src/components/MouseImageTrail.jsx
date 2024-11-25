@@ -77,7 +77,7 @@ export const ImageTrail = () => {
                             </motion.div>
                         ))}
                     </motion.h1>
-                    <p className="sm:w-2/3 md:w-1/2 text-sm lg:text-md text-center md:text-start tracking-tighter md:leading-5 font-safiro-reg font-light">
+                    <p className="sm:w-2/3 md:w-1/2 text-sm lg:text-base text-center md:text-start tracking-tighter md:leading-5 font-safiro-reg font-light">
                         Following are some of my recent projects in frontend and mobile application development. Scroll down to explore more!
                     </p>
                 </div>

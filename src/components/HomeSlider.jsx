@@ -83,7 +83,7 @@ export default function HomeSlider() {
             </div>
           </div>
           <AnimatedWrapper duration={0.8} delay={0.2}>
-            <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-md leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
+            <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-base leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
           </AnimatedWrapper>
         </div>
         <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 xl:pt-8'>

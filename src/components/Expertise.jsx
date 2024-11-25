@@ -18,7 +18,7 @@ export default function Expertise() {
           <div className='sm:w-10/12 md:w-[43%] lg:w-2/5 rounded-3xl px-10 md:px-0 lg:px-4 pt-6'>
             <span className="text-[#6b47e3] font-safiro-reg">React.js, Next.js</span> 
             <h3 className='text-xl sm:text-2xl uppercase leading-relaxed font-safiro-reg'>Frontend Development</h3>
-            <p className='my-5 text-md sm:text-lg'>Over 4 years of experience crafting responsive web applications using React.js, Next.js, and modern web technologies. Experienced in delivering seamless, user-centric solutions.</p>
+            <p className='my-5 text-base sm:text-lg'>Over 4 years of experience crafting responsive web applications using React.js, Next.js, and modern web technologies. Experienced in delivering seamless, user-centric solutions.</p>
             <Link to='/projects' className='cursor-pointer overflow-hidden relative group border w-28 h-8 border-gray-500 flex items-center rounded-xl'>
               <div className='w-28 h-6 relative overflow-hidden px-2 py-1'>
                 <div className="flex items-center">
@@ -43,7 +43,7 @@ export default function Expertise() {
           <div className='rounded-3xl sm:w-10/12 md:w-[43%] lg:w-2/5 px-10 md:px-0 lg:px-4 pt-10'>
             <span className="text-[#09bc8a] font-safiro-reg ">React Native,</span> 
             <h3 className='text-xl sm:text-2xl uppercase leading-relaxed font-safiro-reg'>Mobile App Development</h3>
-            <p className='my-5 text-md sm:text-lg'>
+            <p className='my-5 text-base sm:text-lg'>
                 Skilled in developing hybrid mobile apps and cross-platform solutions using React Native framework.
             </p>
             <Link to='/projects' className='cursor-pointer overflow-hidden relative group border w-28 h-8 border-gray-500 flex items-center rounded-xl'>
