@@ -49,7 +49,7 @@ const ProjectDetail = () => {
       <InteractiveBackground colors={customColors} />
       <div className="flex-[0.85] h-full pt-32 px-8 z-40">
         <AnimatedWrapper duration={1} delay={0.2}>
-          <h1 className="text-6xl font-safiro-reg-i number">{project.title}</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-safiro-reg-i number">{project.title}</h1>
         </AnimatedWrapper>
         <AnimatedWrapper duration={1} delay={0.3}>
           <div dangerouslySetInnerHTML={{ __html: project.description }} className="py-8 tracking-tight" />
@@ -115,9 +115,9 @@ const ProjectDetail = () => {
       <div className="z-40 flex-[0.85] flex flex-col gap-8 h-full pt-32 ml-12">
         <AnimatedWrapper duration={1} delay={0.2}>
           <div className="flex items-center">
-            <span className="text-6xl tracking-tight number">0{project.id}</span>
-            <div className="w-0.5 mx-8 h-16 bg-gray-400 rotate-45"></div>
-            <span className="text-6xl tracking-tight number">06</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight number">0{project.id}</span>
+            <div className="w-0.5 mx-4 md:mx-6 xl:mx-8 h-6 sm:h-8 md:h-10 lg:h-12 xl:h-16 bg-gray-400 rotate-45"></div>
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight number">06</span>
           </div>
         </AnimatedWrapper>
         <AnimatedWrapper duration={1} delay={0.3}>
@@ -140,7 +140,7 @@ const ProjectDetail = () => {
       </div>
       {animationDone && <Link to={`/projects/${nextProject?.id}`} className=" z-40 absolute right-8 bottom-8">
         <div
-          className="w-56 h-56 rounded-full next-project"
+          className="h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:w-48 lg:h-48 xl:h-56 xl:w-56 rounded-full next-project"
           style={{
             backgroundImage: `url(${nextProject?.image || ''})`,
             backgroundSize: "cover",

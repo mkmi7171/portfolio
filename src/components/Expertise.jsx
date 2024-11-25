@@ -12,7 +12,7 @@ export default function Expertise() {
     <div className='flex relative flex-col item-center justify-center flex-wrap px-2 py-12 xl:px-32' style={{ perspective: '1000px' }}>
       <div className='flex flex-col relative gap-24'>
         <div className='w-full flex flex-col md:flex-row md:justify-between lg:justify-evenly items-center gap-12 md:gap-5 relative' style={{ perspective: 1000 }}>
-          <div className='w-[350px] sm:w-[380px] relative color-circle flex justify-center purple-circle after:h-72 after:w-36 sm:after:h-80 sm:after:w-44'>
+          <div className='w-[310px] sm:w-[380px] relative color-circle flex justify-center purple-circle after:h-[14.5rem] after:w-32 sm:after:h-80 sm:after:w-44'>
             <img src={Front} className='w-full object-contain relative z-10 transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-3' />
           </div>
           <div className='sm:w-10/12 md:w-[43%] lg:w-2/5 rounded-3xl px-10 md:px-0 lg:px-4 pt-6'>
@@ -37,7 +37,7 @@ export default function Expertise() {
 
         </div>
         <div className='w-full flex flex-col md:flex-row-reverse md:justify-evenly gap-5 relative items-center md:items-start' style={{perspective:1000}}>
-          <div className='w-[350px] sm:w-[380px] color-circle green-circle flex justify-center relative after:w-48 sm:after:w-52 after:h-1/2 after:rounded-tl-3xl '>
+          <div className='w-[300px] sm:w-[380px] color-circle green-circle flex justify-center relative after:w-44 sm:after:w-52 after:h-1/2 after:rounded-tl-3xl '>
             <img src={Mobile} className='w-full object-contain relative z-10 transition-transform duration-500 ease-in-out hover:scale-105 hover:rotate-3' />
           </div>
           <div className='rounded-3xl sm:w-10/12 md:w-[43%] lg:w-2/5 px-10 md:px-0 lg:px-4 pt-10'>

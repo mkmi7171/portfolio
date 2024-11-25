@@ -35,14 +35,11 @@ const InteractiveBackground = ({ colors }) => {
     }, []);
 
     return (
-        <div
-            style={{
+            <div className="gradient-bg h-screen" style={{
                 '--color1': colors[0],
                 '--color2': colors[1],
                 '--color-interactive': isDarkMode ? '#191818' : colors[2],
-            }}
-        >
-            <div className="gradient-bg h-screen">
+            }}>
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="goo">
@@ -61,7 +58,6 @@ const InteractiveBackground = ({ colors }) => {
                     <div ref={interactiveRef} className="interactive"></div>
                 </div>
             </div>
-        </div>
     );
 };
 

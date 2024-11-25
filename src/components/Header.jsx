@@ -51,7 +51,7 @@ export default function Header() {
                                 a 40,40 0 1,1 80,0
                                 a 40,40 0 1,1 -80,0"
                                 />
-                                <text id="text" fontFamily="monospace" fontSize="16" fill="#505050">
+                                <text id="text" fontFamily="monospace" fontSize="16" fill={isDarkMode ? '#e5e7eb' :'#505050'}>
                                     <textPath id="textPath" href="#circlePath">
                                         Mahsa Karami Mahsa Karami
                                     </textPath>

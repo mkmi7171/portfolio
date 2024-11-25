@@ -56,15 +56,15 @@ export const ImageTrail = () => {
             ]}
             ready={isTextAnimationComplete}
         >
-            <div className="flex h-[65vh] items-center px-8 justify-between">
-                <p className="text-xs font-safiro-reg-i">last projects</p>
+            <div className="flex h-[60vh] items-center px-8 justify-between">
+                <p className="hidden md:flex text-xs font-safiro-reg-i">latest projects</p>
                 <div className="gap-8 flex flex-col justify-center items-center p-3">
                     <motion.h1
-                        className="text-6xl char uppercase leading-[0.9]"
+                        className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl char uppercase leading-[0.9]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        onAnimationComplete={() => setTextAnimationComplete(true)} // Set ready after animation
+                        onAnimationComplete={() => setTextAnimationComplete(true)} 
                     >
                         {Array.from("Projects ").map((char, index) => (
                             <motion.div
@@ -77,11 +77,11 @@ export const ImageTrail = () => {
                             </motion.div>
                         ))}
                     </motion.h1>
-                    <p className="w-1/2 tracking-tighter leading-5 font-safiro-reg font-light">
+                    <p className="sm:w-2/3 md:w-1/2 text-sm lg:text-md text-center md:text-start tracking-tighter md:leading-5 font-safiro-reg font-light">
                         Following are some of my recent projects in frontend and mobile application development. Scroll down to explore more!
                     </p>
                 </div>
-                <p className="text-xs font-safiro-reg-i">scroll</p>
+                <p className="hidden md:flex text-xs font-safiro-reg-i">scroll</p>
             </div>
         </MouseImageTrail>
     );

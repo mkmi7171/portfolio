@@ -44,9 +44,9 @@ export default function HomeSlider() {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-evenly relative items-center">
+    <div className="h-[90vh] sm:h-screen pb-20 md:pb-4 lg:pb-20 pt-20 lg:pt-24 flex flex-col justify-between relative items-center">
       <InteractiveBackground colors={customColors} />
-      <div className="px-8 md:flex md:px-4 lg:px-16 items-center pt-20 md:pt-6 lg:pt-0 w-fit z-10">
+      <div className="px-8 md:flex md:px-4 items-center md:pt-6 lg:pt-0 w-fit z-10">
         <div className="relative homeSection flex-1">
           <div className="flex items-center w-1/2">
               <motion.h1
@@ -82,26 +82,28 @@ export default function HomeSlider() {
               </svg>
             </div>
           </div>
-          <AnimatedWrapper duration={0.8} delay={0.4}>
+          <AnimatedWrapper duration={0.8} delay={0.2}>
             <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-md leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
           </AnimatedWrapper>
         </div>
-        <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 md:pt-12'>
+        <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 xl:pt-8'>
+          <AnimatedWrapper duration={0.6} delay={0.25}>
             <h2 className='font-bold mb-5 md:mb-0 text-xl md:text-2xl font-safiro-reg-i'>Collabs</h2>
+          </AnimatedWrapper>
           <div className='text flex flex-col gap-2 md:gap-4'>
-            <AnimatedWrapper duration={0.6}>
+            <AnimatedWrapper duration={0.6} delay={0.3}>
               <div className='gap-3 flex flex-col'>
                 <span className='font-black'>Mehrayan <span className='text-xs mx-3'>2022-2024</span></span>
                 <span className='text-sm'>Frontend and Mobile App developer</span>
               </div>
             </AnimatedWrapper>
-            <AnimatedWrapper duration={0.7} delay={0.1}>
+            <AnimatedWrapper duration={0.7} delay={0.4}>
               <div className='gap-3 flex flex-col'>
                 <span className='font-black'>Aran Agency<span className='text-xs mx-3'>2020-2022</span></span>
                 <span className='text-sm'>React developer</span>
               </div>
             </AnimatedWrapper>
-            <AnimatedWrapper duration={0.8} delay={0.2}>
+            <AnimatedWrapper duration={0.8} delay={0.5}>
               <div className='gap-3 flex flex-col'>
                 <span className='font-black'>Manzoome Negaran Net<span className='text-xs mx-3'>2018-2020</span></span>
                 <span className='text-sm'>Web developer</span>
@@ -110,7 +112,7 @@ export default function HomeSlider() {
           </div>
         </div>
       </div>
-      <div className='w-full lg:flex flex-row-reverse items-end'>
+      <div className='w-full lg:flex flex-row-reverse md:items-end'>
         <div className='w-full flex justify-center relative after:w-64 after:h-72 after:top-0 after:right-0 after:absolute'>
           <motion.div
             className="flex px-8 w-10/12 lg:w-9/12 xl:w-8/12 justify-end md:justify-between relative"
@@ -119,18 +121,18 @@ export default function HomeSlider() {
             transition={{ duration: 1 }}
           >
             <motion.div
-              className={`hidden md:flex md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 justify-between p-4 items-center flex-col rounded-full border border-gray-400 uppercase ${isLoaded ? 'left-0' : 'left-full -translate-x-48'}`}
+              className={`hidden md:flex md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-48 xl:h-48 justify-between p-4 items-center flex-col rounded-full border border-gray-400 uppercase ${isLoaded ? 'left-0' : 'left-full -translate-x-48'}`}
               style={{
                 transition: 'all 1.1s ease 0.5s',
                 position: isLoaded ? 'relative' : 'absolute',
               }}
             >
               <span className='text-xs'>FrontEnd</span>
-              <span className='text-4xl font-black number'>2020</span>
+              <span className='text-2xl lg:text-3xl xl:text-4xl font-black number'>2020</span>
               <span className='text-xs'>developer</span>
             </motion.div>
             <motion.div
-              className={`hidden md:flex md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 justify-between p-4 items-center flex-col rounded-full border border-gray-400 uppercase ${isLoaded ? 'left-0' : 'left-1/2 -translate-x-24'}`}
+              className={`hidden md:flex md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-48 xl:h-48 justify-between p-4 items-center flex-col rounded-full border border-gray-400 uppercase ${isLoaded ? 'left-0' : 'left-1/2 -translate-x-24'}`}
               style={{
                 marginTop: isLoaded ? '-4rem' : '0',
                 position: isLoaded ? 'relative' : 'absolute',
@@ -139,14 +141,14 @@ export default function HomeSlider() {
               }}
             >
               <span className='text-xs'>mobile App</span>
-              <span className='text-4xl font-black number'>2022</span>
+              <span className='text-2xl lg:text-3xl xl:text-4xl font-black number'>2022</span>
               <span className='text-xs'>developer</span>
             </motion.div>
-            <img src={Mahsa} alt='personal picture' className=' rounded-full overflow-hidden w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 object-center object-cover z-10 -mt-56 md:mt-0 hidden sm:flex' />
+            <img src={Mahsa} alt='personal picture' className=' rounded-full overflow-hidden w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-48 xl:h-48 object-center object-cover z-10 -mt-56 md:mt-0 hidden sm:flex' />
           </motion.div>
 
         </div>
-        <Socials ulClass={`flex lg:flex-col gap-3 mt-8 lg:mt-0 px-8`} />
+        <Socials ulClass={`flex lg:flex-col gap-3 mt-5 md:mt-8 lg:mt-0 px-8`} />
       </div>
     </div>
   )
