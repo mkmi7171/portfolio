@@ -7,7 +7,7 @@ import InteractiveBackground from "./InteractiveBackground";
 import { useDarkMode } from "./DarkModeContext";
 
 const Projects = () => {
-    const {isDarkMode} = useDarkMode()
+    const { isDarkMode } = useDarkMode()
     const customColors = [
         '224, 195, 159',
         '202, 144, 129',
@@ -21,13 +21,6 @@ const Projects = () => {
 
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-70%"]);
 
-    useEffect(() => {
-        const isMobileOrTablet = window.matchMedia("(max-width: 768px)").matches;
-
-        if (isMobileOrTablet) {
-            document.body.style.overflowY = "hidden"; 
-        }
-    }, []);
 
     const Card = ({ card, index }) => {
         return (

@@ -421,9 +421,12 @@ right: -3px;
 .slider::-webkit-scrollbar {
     display: none;
 }
-.list{
-    list-style: inherit;
+@media screen and (min-width: 640px){
+.list {
+        list-style: inherit;
+    }
 }
+
 .list li{
     margin: 3px 0;
 }

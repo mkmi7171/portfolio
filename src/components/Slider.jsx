@@ -1,47 +1,55 @@
-import {useRef} from "react";
+import React, {useRef, useMemo} from "react";
 import { motion } from "framer-motion";
 import AnimatedWrapper from "./AimatedWrapper";
 
 const Slider = ({ project, positionY, animationDone }) => {
     const containerRef = useRef(null);
-    return (
-        <div ref={containerRef}
-            className={`z-40 relative slider border border-black lg:h-screen lg:pt-24 xl:pt-32 pb-8 lg:w-[40%] flex-[1.3] ${animationDone ? "overflow-scroll" : ""
-                    }`}
-            >
-            <motion.div drag="x"
-                dragConstraints={containerRef}
-                dragElastic={0.1}
-                dragMomentum={true} className="flex flex-row lg:flex-col gap-5 lg:gap-8 w-max">
-                <motion.div className="flex items-center justify-center w-80 h-44 lg:w-[580px] lg:h-[320px]">
-                    <motion.div
-                        layoutId={`project-image-${project.id}`}
-                        className="relative w-80 h-44 lg:w-[580px] lg:h-[320px] overflow-hidden"
-                        initial={{ y: positionY, borderRadius: "50%" }}
-                        animate={{ y: 0, borderRadius: "16px" }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <img
-                            src={project.detailedPics[0].src}
-                            alt={project.title}
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
-                    </motion.div>
-                </motion.div>
+    const firstImage = useMemo(() => (
+        <motion.div
+            layoutId={`project-image-${project.id}`}
+            initial={{ y: positionY, borderRadius: "50%" }}
+            animate={{ y: 0, borderRadius: "16px" }}
+            transition={{ duration: 0.6 }}
+            className="w-80 lg:w-full"
+        >
+            <img
+                drag="x"
+                src={project.detailedPics[0].src}
+                alt={project.title}
+                className="w-full object-cover rounded-2xl"
+            />
+        </motion.div>
+    ), [project.detailedPics[0].src, project.id, positionY]);
 
+    return (
+        <div
+            ref={containerRef}
+            className={`my-4 lg:my-0 lg:top-0 lg:w-[39%] lg:pt-24 xl:pt-32 lg:left-[30.5%] relative lg:absolute z-40 slider lg:h-screen pb-8 ${animationDone ? "overflow-y-scroll" : ""
+                }`}
+        >
+            <motion.div
+                dragConstraints={{
+                    left: 0,
+                    right: 0,
+                }}
+                dragElastic={0.1}
+                // transition={SPRING_OPTIONS}
+                className="flex lg:flex-col items-center justify-center gap-5 lg:gap-8 w-max lg:w-full">
+                {firstImage}
                 {animationDone &&
                     project.detailedPics.slice(1).map((image, index) => (
-                        <AnimatedWrapper key={index} duration={0.8}>
+                       
                             <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="w-80 h-44 lg:w-[580px] lg:h-[320px] object-cover object-center rounded-2xl"
+                            src={image.src}
+                            alt={image.alt}
+                            key={index}
+                            drag="x"
+                            className="w-80 lg:w-full object-contain object-center rounded-2xl"
                             />
-                        </AnimatedWrapper>
-                    ))}
-        </motion.div>
-            </div>
 
+                    ))}
+            </motion.div>
+        </div>
     );
 };
 
