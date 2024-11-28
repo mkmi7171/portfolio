@@ -38,15 +38,14 @@ export const projects = [
         image: OstiganCard,
         title: "Ostigan",
         id: 1,
-        description: `Ostigan is a digital marketplace application for both Android and iOS platforms. Its features include: <ul class="list">
-        <li>Sell gift cards across various regions and currencies.</li>
+        description: `digital marketplace application for both Android and iOS. features:<ul class="list">
+        <li>gift cards across various regions and currencies.</li>
         <li>Facilitate international transactions.</li>
         <li>Wallet with options for withdrawal, deposit, and transfer.</li>
         <li>In-app ticketing system </li>
         <li>Push notifications</li>
-        <li>Multi-level authentication system</li>
+        <li>Multi-level authentication system and Secure authorization</li>
         <li>Fingerprint login option </li>
-        <li>Secure authorization</li>
     </ul> `,
         detailedPics: [
             { src: Ostigan5, alt: 'Ostigan feature 5' },

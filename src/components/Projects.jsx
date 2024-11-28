@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import { ImageTrail } from "./MouseImageTrail";
 import InteractiveBackground from "./InteractiveBackground";
 import { useDarkMode } from "./DarkModeContext";
+import LinkSound from '../assets/link.wav'
 
 const Projects = () => {
     const { isDarkMode } = useDarkMode()
@@ -24,9 +25,12 @@ const Projects = () => {
 
     const Card = ({ card, index }) => {
         return (
-            <Link to={{
+            <Link onClick={() => {
+    const audio = new Audio(LinkSound);
+    audio.play();
+            }} to={{
                 pathname: `/projects/${card.id}`,
-                state: { positionY: window.sliderPosition?.top || 0 }, 
+                state: { positionY:  0 }, 
             }} className="group h-56 flex gap-2 ">
                 <motion.div
                     layoutId={`project-image-${card.id}`}

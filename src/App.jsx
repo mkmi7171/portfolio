@@ -11,6 +11,17 @@ import '@fontsource/manrope';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      document.body.style.overflowY = 'auto'; 
+    } else if (window.innerWidth <= 768) {
+      document.body.style.overflowY = 'hidden'; 
+    }
+    return () => {
+      document.body.style.overflowY = 'auto'; 
+    };
+  }, [location.pathname]);
   
   return (
     <AnimatePresence mode="wait">

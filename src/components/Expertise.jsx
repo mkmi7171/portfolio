@@ -1,13 +1,9 @@
 import Front from '../assets/front.png'
 import Mobile from '../assets/mobile.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {Arrow} from './Arrow'
 
 export default function Expertise() {
-  const Arrow = ({ className }) => {
-    return <div className={`transition-all duration-500 ease-in-out ${className}`}>
-      <svg data-v-21a5ab71="" width="20" height="12" viewBox="0 0 18 17" fill="none" class="icon-svg | w-[1.8rem] h-auto"><path data-v-21a5ab71="" d="M4.75928 4.96442L13.3288 4.50811L12.5375 12.7426" class="stroke-current"></path><path data-v-21a5ab71="" d="M13.3857 4.39875L4.90039 12.884" class="stroke-current"></path></svg>
-    </div>
-  }
   return (
     <div className='flex relative flex-col item-center justify-center flex-wrap px-2 py-12 xl:px-32' style={{ perspective: '1000px' }}>
       <div className='flex flex-col relative gap-24'>

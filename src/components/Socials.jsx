@@ -1,11 +1,6 @@
-import React from 'react'
+import {Arrow} from "./Arrow"
 
 export default function Socials({ulClass}) {
-    const Arrow = ({ className }) => {
-        return <div className={`transition-all duration-500 ease-in-out ${className}`}>
-            <svg data-v-21a5ab71="" width="20" height="12" viewBox="0 0 18 17" fill="none" class="icon-svg | w-[1.8rem] h-auto"><path data-v-21a5ab71="" d="M4.75928 4.96442L13.3288 4.50811L12.5375 12.7426" class="stroke-current"></path><path data-v-21a5ab71="" d="M13.3857 4.39875L4.90039 12.884" class="stroke-current"></path></svg>
-        </div>
-    }
   return (
     <div>
           <ul className={`${ulClass}`}>
