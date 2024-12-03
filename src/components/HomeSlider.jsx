@@ -5,10 +5,20 @@ import Socials from './Socials';
 import InteractiveBackground from './InteractiveBackground';
 import { useDarkMode } from './DarkModeContext';
 import AnimatedWrapper from './AimatedWrapper';
+import Lottie from 'react-lottie';
+import ArrowDown from '../assets/arrow-down.json'
 
 export default function HomeSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const {isDarkMode} = useDarkMode()
+  const { isDarkMode } = useDarkMode()
+  const defaultOptions = {
+    loop: true,  
+    autoplay: true,
+    animationData: ArrowDown, 
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice', 
+    },
+  };
 
   useEffect(() => {
     setTimeout(() => setIsLoaded(true), 100); 
@@ -150,6 +160,7 @@ export default function HomeSlider() {
         </div>
         <Socials ulClass={`flex lg:flex-col gap-3 mt-5 md:mt-8 lg:mt-0 px-8`} />
       </div>
+        <Lottie options={defaultOptions} height={100} width={50} style={{ position:'absolute', bottom:0, right:0}} />
     </div>
   )
 }
