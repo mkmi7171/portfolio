@@ -5,7 +5,6 @@ import { projects } from "../components/ProjectsArray";
 import InteractiveBackground from "../components/InteractiveBackground";
 import { useDarkMode } from "../components/DarkModeContext";
 import AnimatedWrapper from "../components/AimatedWrapper";
-import LinkSound from '../assets/link.wav'
 import {Arrow} from "../components/Arrow";
 
 const ProjectDetail = () => {
@@ -32,11 +31,6 @@ const ProjectDetail = () => {
     project.color
   ];
 
-  const handleLinkClick = () => {
-    const audio = new Audio(LinkSound);
-    audio.play();
-  }
-
   return (
     <div className="relative h-[100dvh] overflow-hidden" style={{ backgroundColor: isDarkMode ? "#191818" : project.color }}>
       <div className="w-full flex justify-between items-start">
@@ -50,23 +44,19 @@ const ProjectDetail = () => {
             <div dangerouslySetInnerHTML={{ __html: project.description }} className="text-xs sm:text-sm sm:text-base xl:text-lg py-2 lg:py-6 xl:py-8 sm:tracking-tight" />
           </AnimatedWrapper>
           <AnimatedWrapper duration={0.6} delay={0.4}>
-            <div className={`uppercase overflow-hidden relative group border ${isDarkMode ? 'border-gray-100' : 'border-gray-800'} w-24 h-6 md:w-28 md:h-8 px-2 py-1 rounded-lg md:rounded-xl`}>
-              <div className="flex items-center">
-                <p className="absolute top-1 md:top-1.5 text-xs md:text-sm group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-300 ease-in-out group-hover:opacity-0">
-                  Visit
+            <div className={`cursor-pointer overflow-hidden relative group border w-24 h-8 ${isDarkMode ? 'border-gray-100' : 'border-gray-500'} flex items-center rounded-xl`}>
+              <a href={project.detailInfo.link} target="_blank" rel="noreferrer" className='w-24 h-6 relative overflow-hidden px-2 py-1'>
+                <div className="flex items-center">
+                  <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-500 ease-in-out group-hover:opacity-0'>
+                    VISIT
+                  </p>
+                  <Arrow className={`absolute top-1 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`} />
+                </div>
+                <p className='text-xs absolute -bottom-[60%] group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
+                  VISIT
                 </p>
-                <Arrow
-                  className={`absolute top-1 md:top-1.5 right-1 group-hover:-top-full group-hover:-right-4 group-hover:scale-50`}
-                />
-              </div>
-              <p className="text-xs md:text-sm absolute -bottom-[50%] group-hover:bottom-0.5 md:group-hover:bottom-1 transition-all tracking-widest group-hover:tracking-tighter duration-300 ease-in-out opacity-0 group-hover:opacity-100">
-                visit
-              </p>
-              <Arrow
-                className={
-                  "absolute top-full right-4 scale-50 md:group-hover:top-1.5 group-hover:top-0.5 group-hover:right-1 group-hover:scale-100"
-                }
-              />
+                <Arrow className={'absolute top-full right-4 scale-50 group-hover:top-1 group-hover:right-1 group-hover:scale-100'} />
+              </a>
             </div>
           </AnimatedWrapper>
 
@@ -141,9 +131,10 @@ const ProjectDetail = () => {
         </motion.div>
       </div>
       
-      {animationDone &&  <Link onClick={handleLinkClick} to={`/projects/${nextProject?.id}`} className="w-full lg:w-auto flex justify-end px-4 z-40 absolute lg:right-4 absolute bottom-2 right-0">
+      {animationDone && <Link to={`/projects/${nextProject?.id}`} className="w-full lg:w-auto flex justify-end px-4 z-40 absolute lg:right-4 absolute bottom-2 right-0">
+        <span className="text-[0.65rem] md:text-xs font-safiro-reg-i">next</span>
         <div
-          className="h-20 w-20 sm:h-28 sm:w-28 lg:w-44 lg:h-44 xl:h-48 xl:w-48 rounded-full next-project"
+          className="h-20 w-20 sm:h-28 sm:w-28 lg:w-40 lg:h-40 xl:h-44 xl:w-44 rounded-full next-project"
           style={{
             backgroundImage: `url(${nextProject?.image || ''})`,
             backgroundSize: "cover",

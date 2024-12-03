@@ -1,9 +1,11 @@
 import Front from '../assets/front.png'
 import Mobile from '../assets/mobile.png'
 import { Link } from 'react-router-dom'
-import {Arrow} from './Arrow'
+import { Arrow } from './Arrow'
+import { useDarkMode } from './DarkModeContext'
 
 export default function Expertise() {
+  const {isDarkMode} = useDarkMode()
   return (
     <div className='flex relative flex-col item-center justify-center flex-wrap px-2 py-12 xl:px-32' style={{ perspective: '1000px' }}>
       <div className='flex flex-col relative gap-24'>
@@ -15,7 +17,7 @@ export default function Expertise() {
             <span className="text-[#6b47e3] font-safiro-reg">React.js, Next.js</span> 
             <h3 className='text-xl sm:text-2xl uppercase leading-relaxed font-safiro-reg'>Frontend Development</h3>
             <p className='my-5 text-base sm:text-lg'>Over 4 years of experience crafting responsive web applications using React.js, Next.js, and modern web technologies. Experienced in delivering seamless, user-centric solutions.</p>
-            <Link to='/projects' className='cursor-pointer overflow-hidden relative group border w-28 h-8 border-gray-500 flex items-center rounded-xl'>
+            <Link to='/projects' className={`cursor-pointer overflow-hidden relative group border w-28 h-8 ${isDarkMode ? 'border-gray-100' : 'border-gray-500'} flex items-center rounded-xl`}>
               <div className='w-28 h-6 relative overflow-hidden px-2 py-1'>
                 <div className="flex items-center">
                   <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-500 ease-in-out group-hover:opacity-0'>
@@ -42,7 +44,7 @@ export default function Expertise() {
             <p className='my-5 text-base sm:text-lg'>
                 Skilled in developing hybrid mobile apps and cross-platform solutions using React Native framework.
             </p>
-            <Link to='/projects' className='cursor-pointer overflow-hidden relative group border w-28 h-8 border-gray-500 flex items-center rounded-xl'>
+            <Link to='/projects' className={`cursor-pointer overflow-hidden relative group border w-28 h-8 ${isDarkMode ? 'border-gray-100' : 'border-gray-500'} flex items-center rounded-xl`}>
               <div className='w-28 h-6 relative overflow-hidden px-2 py-1'>
                 <div className="flex items-center">
                   <p className='absolute top-1 text-xs group-hover:absolute group-hover:-top-[55%] group-hover:tracking-widest tracking-tighter transition-all duration-500 ease-in-out group-hover:opacity-0'>

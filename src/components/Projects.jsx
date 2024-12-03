@@ -1,11 +1,10 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { projects } from "./ProjectsArray";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { ImageTrail } from "./MouseImageTrail";
 import InteractiveBackground from "./InteractiveBackground";
 import { useDarkMode } from "./DarkModeContext";
-import LinkSound from '../assets/link.wav'
 
 const Projects = () => {
     const { isDarkMode } = useDarkMode()
@@ -21,16 +20,19 @@ const Projects = () => {
     });
 
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-70%"]);
+    const [animate, setAnimate] = useState(true);
 
-
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimate(false);
+        }, 1000);
+        return () => clearTimeout(timer); 
+    }, []);
     const Card = ({ card, index }) => {
         return (
-            <Link onClick={() => {
-    const audio = new Audio(LinkSound);
-    audio.play();
-            }} to={{
+            <Link to={{
                 pathname: `/projects/${card.id}`,
-                state: { positionY:  0 }, 
+                state: { positionY: 0 },
             }} className="group h-56 flex gap-2 ">
                 <motion.div
                     layoutId={`project-image-${card.id}`}
@@ -63,21 +65,31 @@ const Projects = () => {
     };
 
     return (
-            <div ref={targetRef} className="relative h-[300vh]">
-                <div ref={containerRef} className="sticky h-screen top-0 flex  flex-col overflow-hidden">
-                    <InteractiveBackground colors={customColors} />
-                    <ImageTrail />
+        <div ref={targetRef} className="relative h-[300vh]">
+            <div ref={containerRef} className="sticky h-screen top-0 flex  flex-col overflow-hidden">
+                <InteractiveBackground colors={customColors} />
+                <ImageTrail />
+                <motion.div initial={animate ? { x: "-200px" } : { x: '0' }} 
+                    animate={animate ? { x: 0 } : {}}
+                    transition={{
+                        duration: 1,
+                        ease: "easeOut",
+                    }}>
                     <motion.div
                         drag="x"
                         dragConstraints={containerRef}
                         dragElastic={0.1}
-                        dragMomentum={true} style={{ x }} className="flex gap-3 md:gap-4 lg:gap-6 xl:gap-8 w-fit">
+                        dragMomentum={true} style={{ x }}
+                        className={`flex gap-3 md:gap-4 lg:gap-6 xl:gap-8 w-fit`}>
                         {projects.map((card, index) => {
                             return <Card card={card} index={index} key={card.id} />;
                         })}
                     </motion.div>
-                </div>
+
+               </motion.div>
+                   
             </div>
+        </div>
     );
 };
 

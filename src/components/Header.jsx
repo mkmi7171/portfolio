@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {useDarkMode} from './DarkModeContext'
-import switchSound from '../assets/transition-base.mp3';
+import ToggleTheme from './ToggleTheme';
 
 export default function Header() {
     const { pathname } = useLocation(); 
@@ -9,7 +9,7 @@ export default function Header() {
     const location = "Toronto";
     const [currentTime, setCurrentTime] = useState("");
 
-    const { isDarkMode, toggleDarkMode } = useDarkMode();
+    const { isDarkMode } = useDarkMode();
 
     useEffect(() => {
         const updateTime = () => {
@@ -28,11 +28,6 @@ export default function Header() {
         return () => clearInterval(timer);
     }, []);
 
-    const handleToggleTheme = () => {
-        const audio = new Audio(switchSound);
-        audio.play();
-        toggleDarkMode(); 
-    };
 
     return (
         <div className="relative text-extralight">
@@ -65,11 +60,11 @@ export default function Header() {
                         <Link to="/"><p>Home</p></Link>
                         <span className="mx-2">/</span>
                         <Link to="/projects">Projects</Link>
-
-                        <div
+                        {/* <div
                             className={`w-5 h-5 rounded-full ${isDarkMode ? 'bg-white' : 'bg-black'} ml-10 lg:ml-20 cursor-pointer`}
                             onClick={handleToggleTheme}
-                        ></div>
+                        ></div> */}
+                        <ToggleTheme />
                     </div>
                 </nav>
             </header>

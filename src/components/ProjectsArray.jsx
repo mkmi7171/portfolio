@@ -58,7 +58,7 @@ export const projects = [
             {
                 role: 'mobile application developer',
                 techs: 'React Native, Typescript, Redux, React Navigation, React Query, Firebase, JWT',
-                year: '2023-2024'
+                year: '2023-2024',
             }
         
     },
@@ -80,7 +80,8 @@ export const projects = [
             {
                 role: 'Frontend Developer',
                 techs: 'Next.js, Javascript',
-                year: '2022'
+            year: '2022',
+            link:'https://atcholding.com/'
             }
         
     },
@@ -102,7 +103,8 @@ export const projects = [
             {
                 role: 'Frontend Developer',
                 techs: 'Next.js, Javascript',
-                year: '2022'
+            year: '2022',
+            link:'https://www.agrotamin.com/en'
             }
         
     },
@@ -124,7 +126,8 @@ export const projects = [
             {
                 role: 'Frontend developer',
                 techs: 'React.js, Javascript',
-                year: '2023'
+            year: '2023',
+            link:'https://mehrayan.com/'
             }
         
     },
