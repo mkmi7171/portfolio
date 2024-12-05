@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion} from 'framer-motion';
+import { color, motion} from 'framer-motion';
 import Mahsa from '../assets/mahsa.jpeg';
 import Socials from './Socials';
 import InteractiveBackground from './InteractiveBackground';
@@ -7,6 +7,7 @@ import { useDarkMode } from './DarkModeContext';
 import AnimatedWrapper from './AimatedWrapper';
 import Lottie from 'react-lottie';
 import ArrowDown from '../assets/arrow-down.json'
+import ArrowWhite from '../assets/arrow-white.json'
 
 export default function HomeSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,7 +15,7 @@ export default function HomeSlider() {
   const defaultOptions = {
     loop: true,  
     autoplay: true,
-    animationData: ArrowDown, 
+    animationData: isDarkMode ? ArrowWhite :ArrowDown, 
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice', 
     },
@@ -160,7 +161,7 @@ export default function HomeSlider() {
         </div>
         <Socials ulClass={`flex lg:flex-col gap-3 mt-5 md:mt-8 lg:mt-0 px-8`} />
       </div>
-        <Lottie options={defaultOptions} height={100} width={50} style={{ position:'absolute', bottom:0, right:0}} />
+      <Lottie options={defaultOptions} height={100} width={50} style={{ position: 'absolute', bottom: 0, right: 0, filter: 'red', }} />
     </div>
   )
 }
