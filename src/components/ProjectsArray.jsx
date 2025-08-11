@@ -38,14 +38,23 @@ export const projects = [
         image: OstiganCard,
         title: "Ostigan",
         id: 1,
-        description: `digital marketplace application for both Android and iOS. features:<ul class="list">
-        <li>gift cards across various regions and currencies.</li>
-        <li>Facilitate international transactions.</li>
-        <li>Wallet with options for withdrawal, deposit, and transfer.</li>
-        <li>In-app ticketing system </li>
-        <li>Push notifications</li>
-        <li>Multi-level authentication system and Secure authorization</li>
-        <li>Fingerprint login option </li>
+        description: `Digital marketplace app built with React Native for Android & iOS.<ul class="list">
+   
+  <li>Gift cards, premium accounts, and more across regions & currencies</li>
+  <li>Fingerprint login option</li>
+  <li>SMS login with automatic code reading from keyboard</li>
+  <li>JWT-based secure authorization</li>
+  <li>Personalized dashboards with multi-level authentication</li>
+  <li>Secure payment and wallet system</li>
+  <li>Search products with filters for easy navigation</li>
+  <li>Favorites (wishlist) feature</li>
+  <li>Simple, secure checkout with in-app invoice download</li>
+  <li>View & filter purchase history based on status</li>
+  <li>In-app ticketing system with file upload and ticket response tracking</li>
+  <li>Firebase push notifications with in-app notification center</li>
+  <li>OCR card number reading via mobile camera using Google Cloud service</li>
+  <li>Bottom tab bar or hamburger menu for easy navigation</li>
+  <li>Smooth navigation and user experience</li>
     </ul> `,
         detailedPics: [
             { src: Ostigan5, alt: 'Ostigan feature 5' },
@@ -56,9 +65,10 @@ export const projects = [
         ],
         detailInfo: 
             {
-                role: 'mobile application developer',
+                role: 'Mobile Application Developer',
                 techs: 'React Native, Typescript, Redux, React Navigation, React Query, Firebase, JWT',
                 year: '2023-2024',
+                link: 'https://ostigan.com/',
             }
         
     },

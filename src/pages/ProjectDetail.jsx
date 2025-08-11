@@ -35,13 +35,13 @@ const ProjectDetail = () => {
     <div className="relative h-[100dvh] overflow-hidden" style={{ backgroundColor: isDarkMode ? "#191818" : project.color }}>
       <div className="w-full flex justify-between items-start">
         <InteractiveBackground colors={customColors} />
-        <div className="flex-[1.4] lg:flex-[0.3] h-full pt-20 lg:pt-24 xl:pt-32 px-3 
+        <div className="flex-[1.4] lg:flex-[0.3] h-full pt-20 lg:pt-24 px-3  
         sm:px-5 lg:pr-12 z-40">
           <AnimatedWrapper duration={0.6} delay={0.2}>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-safiro-reg-i number">{project.title}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-safiro-reg-i number">{project.title}</h1>
           </AnimatedWrapper>
           <AnimatedWrapper duration={0.6} delay={0.3}>
-            <div dangerouslySetInnerHTML={{ __html: project.description }} className="text-xs sm:text-sm sm:text-base xl:text-lg py-2 lg:py-6 xl:py-8 sm:tracking-tight" />
+            <div dangerouslySetInnerHTML={{ __html: project.description }} className="text-xs sm:text-sm sm:text-base lg:leading-4 xl:text-[16px]  xl:leading-5  py-2 lg:py-4 sm:tracking-tight" />
           </AnimatedWrapper>
           <AnimatedWrapper duration={0.6} delay={0.4}>
             <div className={`cursor-pointer overflow-hidden relative group border w-24 h-8 ${isDarkMode ? 'border-gray-100' : 'border-gray-500'} flex items-center rounded-xl`}>
@@ -61,7 +61,7 @@ const ProjectDetail = () => {
           </AnimatedWrapper>
 
         </div>
-        <div className="flex-[0.9] z-40 lg:flex-[0.3] flex flex-col px-2 gap-2 lg:gap-8 h-full pt-20 lg:pt-24 xl:pt-32">
+        <div className="flex-[0.9] z-40 lg:flex-[0.28] flex flex-col px-2 gap-2 lg:gap-8 h-full pt-20 lg:pt-24 xl:pt-32 ">
           <AnimatedWrapper duration={0.6} delay={0.2}>
             <div className="flex items-center">
               <span className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl tracking-tight number">0{project.id}</span>
@@ -89,7 +89,7 @@ const ProjectDetail = () => {
         </div>
       </div>
       <div
-        className={`px-3 sm:px-5 lg:px-0 my-4 lg:my-0 lg:top-0 lg:w-[39%] lg:pt-24 xl:pt-32 lg:left-[30.5%] relative lg:absolute z-40 slider lg:h-screen lg:pb-8 ${animationDone ? "overflow-y-scroll" : ""
+        className={`px-3 sm:px-5 lg:px-0 my-4 lg:my-0 lg:top-0 lg:w-[39%] lg:pt-24 xl:pt-32 lg:left-[33%] relative lg:absolute z-40 slider lg:h-screen lg:pb-8 ${animationDone ? "overflow-y-scroll" : ""
           }`}
       >
         <motion.div

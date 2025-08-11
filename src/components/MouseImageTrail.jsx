@@ -1,5 +1,7 @@
 import { useAnimate, motion } from "framer-motion";
 import React, { useRef, useState } from "react";
+import { IonIcon } from "@ionic/react";
+import {arrowDown} from "ionicons/icons";
 import pic1 from '../assets/smallPics/1.png'
 import pic2 from '../assets/smallPics/2.png'
 import pic3 from '../assets/smallPics/3.png'
@@ -57,7 +59,7 @@ export const ImageTrail = () => {
             ready={isTextAnimationComplete}
         >
             <div className="flex h-[60vh] items-center px-8 justify-between">
-                <p className="hidden md:flex text-xs font-safiro-reg-i">latest projects</p>
+                <p className="hidden lg:flex text-sm font-safiro-reg-i">latest projects</p>
                 <div className="gap-8 flex flex-col justify-center items-center p-3">
                     <motion.h1
                         className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl char uppercase leading-[0.9]"
@@ -81,7 +83,11 @@ export const ImageTrail = () => {
                         Following are some of my recent projects in frontend and mobile application development. Scroll down to explore more!
                     </p>
                 </div>
-                <p className="hidden md:flex text-xs font-safiro-reg-i">scroll</p>
+                <div className="flex flex-col items-center hidden lg:flex gap-3">
+                <p className="text-sm font-safiro-reg-i text-center">scroll down to see more</p>
+                <IonIcon
+                    icon={arrowDown} />
+                </div>
             </div>
         </MouseImageTrail>
     );
