@@ -58,8 +58,8 @@ const Projects = () => {
                     </div>
                     <div className="p-3 w-[6.5rem] h-[6.5rem] sm:w-[7.5rem] sm:h-[7.5rem] md:w-[9.5rem] md:h-[9.5rem] lg:w-[11.5rem] lg:h-[11.5rem]  mat-bg self-center rounded-full flex flex-col justify-between items-center group-hover:scale-95 transition-all transition-400">
                         <span className="text-xs">NO. {index + 1}</span>
-                        <p className="font-safiro-reg-i text-sm sm:text-lg md:text-xl lg:text-2xl number">{card.title}</p>
-                        <span className="text-xs">2022</span>
+                        <p className="font-safiro-reg-i text-sm sm:text-lg md:text-xl lg:text-2xl number text-center">{card.title}</p>
+                        <span className="text-xs">{card.detailInfo.year}</span>
                     </div>
                 </div>
             </Link>

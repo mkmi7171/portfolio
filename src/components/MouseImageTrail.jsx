@@ -58,7 +58,7 @@ export const ImageTrail = () => {
             ]}
             ready={isTextAnimationComplete}
         >
-            <div className="flex h-[60vh] items-center px-8 justify-between">
+            <div className="flex h-[60vh] items-center px-8 justify-center lg:justify-between">
                 <p className="hidden lg:flex text-sm font-safiro-reg-i">latest projects</p>
                 <div className="gap-8 flex flex-col justify-center items-center p-3">
                     <motion.h1
@@ -79,9 +79,10 @@ export const ImageTrail = () => {
                             </motion.div>
                         ))}
                     </motion.h1>
-                    <p className="sm:w-2/3 md:w-1/2 text-sm lg:text-base text-center md:text-start tracking-tighter md:leading-5 font-safiro-reg font-light">
+                    <p className="sm:w-2/3 md:w-1/2 text-sm lg:text-base text-center tracking-tighter md:leading-5 font-safiro-reg font-light">
                         Following are some of my recent projects in frontend and mobile application development. Scroll down to explore more!
                     </p>
+                    
                 </div>
                 <div className="flex flex-col items-center hidden lg:flex gap-3">
                 <p className="text-sm font-safiro-reg-i text-center">scroll down to see more</p>

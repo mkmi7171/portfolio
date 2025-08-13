@@ -28,16 +28,50 @@ import MehrayanCard from '../assets/mehrayanThumb.png'
 import AtcCard from '../assets/atcThumb.png'
 import OneandintlCard from '../assets/oneandintlThumb.png'
 import AgrotaminCard from '../assets/agroThumb.jpeg'
-import MahsaCard from '../assets/mahsa.jpeg'
-import Portfolio from '../assets/projectsPic/portfolio.png'
+import HHFThumb from '../assets/hhfThumb.jpg'
+import HHF1 from '../assets/projectsPic/hhf1.png'
+import HHF2 from '../assets/projectsPic/hhf2.png'
+import HHF3 from '../assets/projectsPic/hhf3.png'
+import HHF4 from '../assets/projectsPic/hhf4.png'
+import HHF5 from '../assets/projectsPic/hhf5.png'
+import TGK from '../assets/TGK.jpeg'
+import TGK1 from '../assets/projectsPic/TGK1.png'
+import TGK2 from '../assets/projectsPic/TGK2.png'
 
 export const projects = [
+    {
+        color: '#f3fff7',
+        bubbleColor: '252, 219, 131',
+        image: TGK,
+        title: "Toronto Global Kitchen",
+        id: 1,
+        description: `A modern e-commerce platform built to empower local, immigrant-owned food businesses in Toronto.  
+<ul class="list">
+  <li>Full-stack application using Next.js (App Router), TypeScript, Tailwind CSS, Zustand, and Sanity</li>
+  <li>Dynamic multi-vendor storefront with persistent shopping cart using Zustand</li>
+  <li>Headless CMS integration for easy, non-technical product management</li>
+  <li>Responsive, accessible design with Tailwind CSS</li>
+  <li>Deployed on Vercel with CI/CD pipeline for automated testing and deployment</li>
+</ul> `,
+        detailedPics: [
+            { src: TGK1, alt: 'Toronto Global Kitchen 1' },
+            { src: TGK2, alt: 'Toronto Global Kitchen 2' }
+        ],
+        detailInfo: 
+            {
+                role: 'Full-Stack Developer',
+                techs: 'Next.js, TypeScript, Tailwind CSS, Zustand, Sanity, ESLint',
+                year: '2025',
+                link: 'https://toronto-global-kitchen.vercel.app',
+            }
+        
+    },
     {
         color: '#f3fff7',
         bubbleColor: '131, 251, 221',
         image: OstiganCard,
         title: "Ostigan",
-        id: 1,
+        id: 2,
         description: `Digital marketplace app built with React Native for Android & iOS.<ul class="list">
    
   <li>Gift cards, premium accounts, and more across regions & currencies</li>
@@ -73,11 +107,42 @@ export const projects = [
         
     },
     {
+        color: '#f5f3f0',
+        bubbleColor: '184, 184, 184',
+        image: HHFThumb,
+        title: "HHF Greek Canadian Archives",
+        id: 3,
+        description: `A public-facing digital heritage site for a government-funded project at York University. Delivered a visually appealing, fully dynamic website with a CMS that their non-technical staff could easily update.  
+<ul class="list">
+  <li>Built using Webflow with custom-coded extensions</li>
+  <li>Adhered to AODA accessibility standards</li>
+  <li>Integrated GSAP for smooth animations</li>
+  <li>Implemented dynamic sliders using Swiper.js</li>
+  <li>Developed personalized, data-driven storytelling modules with vanilla JavaScript</li>
+  <li>Delivered on-time and trained client staff for content management</li>
+</ul>`,
+        detailedPics: [
+            { src: HHF1, alt: 'HHF GCA website 1' },
+            { src: HHF2, alt: 'HHF GCA website 2' },
+            { src: HHF3, alt: 'HHF GCA website 3' },
+            { src: HHF4, alt: 'HHF GCA website 4' },
+            { src: HHF5, alt: 'HHF GCA website 5' },
+        ],
+        detailInfo: 
+            {
+                role: 'Web developer',
+                techs: 'WebFlow, Javascript, GSAP, Swiper.js',
+                year: '2025',
+                link:`https://hhfgca-archive.webflow.io/`
+            }
+        
+    },
+    {
         color: '#fdeee7',
         bubbleColor: '245, 168, 137',
         image: AtcCard,
         title: "ATC",
-        id: 2,
+        id: 4,
         description: 'ATC Holding is a parent company that encompasses several subsidiary holdings. The website was designed to represent the company and cater to its internal operational needs',
         detailedPics: [
             { src: Atc1, alt: 'ATC feature 1' },
@@ -100,7 +165,7 @@ export const projects = [
         bubbleColor: '230, 205, 130',
         image: AgrotaminCard,
         title: "Agrotamin",
-        id: 3,
+        id: 5,
         description:'AgroTamin is a leading grain trading company and one of the top grain importers. The website showcases their operations, highlights their expertise in grain trading, and provides detailed information about their storage facilities',
         detailedPics: [
             { src: Agro1, alt: 'Agrotamin feature 1' },
@@ -123,7 +188,7 @@ export const projects = [
         bubbleColor: '154, 155, 229',
         image: MehrayanCard,
         title: "Mehrayan",
-        id: 4,
+        id: 6,
         description:'Mehrayan is a technology firm that collaborates with designers and developers to create software, web and mobile applications for its business growth. One of their flagship products is Ostigan. The website reflects their mission and showcases their expertise.',
         detailedPics: [
             { src: Mehrayan1, alt: 'Mehrayan feature 1' },
@@ -142,29 +207,11 @@ export const projects = [
         
     },
     {
-        color: '#f5f3f0',
-        bubbleColor: '240, 199, 199',
-        image: MahsaCard,
-        title: "Portfolio",
-        id: 5,
-        description: 'This website is my personal portfolio. You are exploring it right now!',
-        detailedPics: [
-            { src: Portfolio, alt: 'Portfolio feature 1' },
-        ],
-        detailInfo: 
-            {
-                role: 'Frontend developer',
-                techs: 'React.js',
-                year: '2024'
-            }
-        
-    },
-    {
         color: '#fff1e6',
         bubbleColor: '255, 194, 145',
         image: OneandintlCard,
         title: "oneandintl",
-        id: 6,
+        id: 7,
         description:'One and Intel is a  well known trading company specializing in the importation of agricultural products, oils, and grains across multiple countries. The website highlights their import regions, the range of products they trade, and showcases their potential in the global market.',
         detailedPics: [
             { src: One1, alt: 'oneandintl feature 1' },

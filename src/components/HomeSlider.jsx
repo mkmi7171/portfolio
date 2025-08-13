@@ -57,7 +57,7 @@ export default function HomeSlider() {
   return (
     <div className="h-[90vh] sm:h-screen pb-20 md:pb-4 lg:pb-20 pt-20 lg:pt-24 flex flex-col justify-between relative items-center">
       <InteractiveBackground colors={customColors} />
-      <div className="px-8 md:flex md:px-4 items-center md:pt-6 lg:pt-0 w-fit z-10">
+      <div className="px-8 md:flex md:px-4 lg:px-8 xl:px-10 items-center md:pt-6 lg:pt-0 w-fit z-10">
         <div className="relative homeSection flex-1">
           <div className="flex items-center w-1/2">
               <motion.h1
@@ -94,7 +94,7 @@ export default function HomeSlider() {
             </div>
           </div>
           <AnimatedWrapper duration={0.8} delay={0.2}>
-            <p className='flex-1 w-10/12 sm:w-2/3 xl:w-1/2 text-sm md:text-base leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I am a creative Front-End and Mobile Application Developer. I specialize in creating intuitive and scalabe websites and applications.</p>
+            <p className='flex-1 w-10/12 sm:w-2/3 lg:w-10/12 text-sm md:text-base leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I’m a Toronto-based FrontEnd Developer with 5 years of experience, specializing in creating responsive, high-performance web and mobile applications. With expertise in React.js, Next.js, React Native, Node.js, TypeScript, and more. I bring designs to life with clean, reusable code and a sharp eye for detail. I adapt quickly to the tools and workflows that best serve each project.</p>
           </AnimatedWrapper>
         </div>
         <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 xl:pt-8'>
