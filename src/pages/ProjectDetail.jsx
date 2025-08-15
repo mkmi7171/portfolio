@@ -66,7 +66,7 @@ const ProjectDetail = () => {
             <div className="flex items-center">
               <span className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl tracking-tight number">0{project.id}</span>
               <div className="w-0.5 mx-4 md:mx-6 xl:mx-8 h-6 sm:h-8 md:h-10 xl:h-16 bg-gray-400 rotate-45"></div>
-              <span className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl tracking-tight number">07</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl tracking-tight number">08</span>
             </div>
           </AnimatedWrapper>
           <AnimatedWrapper duration={0.6} delay={0.3}>

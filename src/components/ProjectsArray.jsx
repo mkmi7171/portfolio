@@ -37,6 +37,9 @@ import HHF5 from '../assets/projectsPic/hhf5.png'
 import TGK from '../assets/TGK.jpeg'
 import TGK1 from '../assets/projectsPic/TGK1.png'
 import TGK2 from '../assets/projectsPic/TGK2.png'
+import Notash from '../assets/projectsPic/notash.png'
+import Notash1 from '../assets/projectsPic/notash1.png'
+import Notash2 from '../assets/projectsPic/notash2.png'
 
 export const projects = [
     {
@@ -138,12 +141,49 @@ export const projects = [
         
     },
     {
+        color: '#f5f3f0',
+        bubbleColor: '207, 240, 255',
+        image: Notash,
+        title: "Vehicle Automation Apps",
+        id: 4,
+        description:`Developed two integrated mobile applications for automotive systems in vehicles: a Cruise Control System and an Automatic Light Control System.  
+<ul class="list">
+  <li>Integrated with vehicle’s onboard sensors and actuators</li>
+  <li>Stable data transmission using HC-05 Bluetooth module</li>
+  <li>Custom handshaking and hex-based packet protocol for precise control and bandwidth efficiency</li>
+  <li>GPS integration to display live driving routes</li>
+  <li>Secure BLE pairing for system exclusivity</li>
+  <li>Developed an intuitive UI enabling users to manage cruise control speed, adjust auto light control range, track driving routes via GPS, and remotely operate their parking space door</li>
+</ul>`,
+        detailedPics: [
+            { src: Notash1, alt: 'Notash Sanat app 1' },
+            { src: Notash2, alt: 'Notash sanat app 2' },
+
+        ],
+        detailInfo: 
+            {
+                role: 'Mobile Application Developer',
+                techs: 'React Native, React Navigation, Firebase, Context API, BLE',
+                year: '2023',
+                link:`https://notashan.org/product/notash-cruise-control-set-for-jac-s5-gear-box-eagle-eyes-model/`
+            }
+        
+    },
+    {
         color: '#fdeee7',
         bubbleColor: '245, 168, 137',
         image: AtcCard,
         title: "ATC",
-        id: 4,
-        description: 'ATC Holding is a parent company that encompasses several subsidiary holdings. The website was designed to represent the company and cater to its internal operational needs',
+        id: 5,
+        description: `Designed and developed the corporate website for ATC Holding, the parent organization overseeing multiple subsidiary companies, effectively representing the brand’s identity while supporting internal operational requirements. <ul class="list">
+  <li>Collaborated with designers in an agile team to translate Figma prototypes into functional, responsive, and reusable components.</li>
+  <li>Implemented bilingual support (English & Persian) using i18n.</li>
+  <li>Ensured cross-browser compatibility and mobile-first design.</li>
+  <li>Applied Tailwind CSS for styling.</li>
+  <li>Optimized page load performance, including image optimization.</li>
+  <li>Built with TypeScript for type safety and consistent code.</li>
+  <li>Managed version control using GitHub.</li>
+</ul>`,
         detailedPics: [
             { src: Atc1, alt: 'ATC feature 1' },
             { src: Atc2, alt: 'ATC feature 2' },
@@ -165,8 +205,18 @@ export const projects = [
         bubbleColor: '230, 205, 130',
         image: AgrotaminCard,
         title: "Agrotamin",
-        id: 5,
-        description:'AgroTamin is a leading grain trading company and one of the top grain importers. The website showcases their operations, highlights their expertise in grain trading, and provides detailed information about their storage facilities',
+        id: 6,
+        description:`Designed and developed the website for AgroTamin, a leading grain trading company and one of the top grain importers. Showcased company operations, trading expertise, and detailed storage facility information.
+<ul class="list">
+  <li>Collaborated with designers to translate Figma prototypes into responsive, reusable components.</li>
+  <li>Built with Next.js for optimized performance, server-side rendering (SSR), and SEO-friendly pages.</li>
+  <li>Implemented cross-browser compatibility and mobile-first design.</li>
+  <li>Added bilingual support using i18n.</li>
+  <li>Applied Tailwind CSS for scalable and maintainable styling.</li>
+  <li>Optimized page load performance, including image optimization.</li>
+  <li>Built with TypeScript for type safety and consistent code.</li>
+  <li>Managed version control using GitHub.</li>
+</ul>`,
         detailedPics: [
             { src: Agro1, alt: 'Agrotamin feature 1' },
             { src: Agro2, alt: 'Agrotamin feature 2' },
@@ -188,8 +238,19 @@ export const projects = [
         bubbleColor: '154, 155, 229',
         image: MehrayanCard,
         title: "Mehrayan",
-        id: 6,
-        description:'Mehrayan is a technology firm that collaborates with designers and developers to create software, web and mobile applications for its business growth. One of their flagship products is Ostigan. The website reflects their mission and showcases their expertise.',
+        id: 7,
+        description:`Designed and developed the website for Mehrayan, a technology firm that collaborates with designers and developers to create software, web, and mobile applications for business growth. One of their flagship products is Ostigan. The website reflects their mission and showcases their expertise.
+<ul class="list">
+  <li>Collaborated with designers to translate Figma prototypes into responsive, reusable components.</li>
+  <li>Built with Next.js for optimized performance, server-side rendering (SSR), and SEO-friendly pages.</li>
+  <li>Implemented cross-browser compatibility and mobile-first design.</li>
+  <li>Added bilingual support (English & Persian) using i18n.</li>
+  <li>Implemented challenging animations to enhance user experience.</li>
+  <li>Applied Tailwind CSS for scalable and maintainable styling.</li>
+  <li>Optimized page load performance, including image optimization.</li>
+  <li>Built with TypeScript for type safety and consistent code.</li>
+  <li>Managed version control using GitHub.</li>
+</ul>`,
         detailedPics: [
             { src: Mehrayan1, alt: 'Mehrayan feature 1' },
             { src: Mehrayan2, alt: 'Mehrayan feature 2' },
@@ -211,8 +272,14 @@ export const projects = [
         bubbleColor: '255, 194, 145',
         image: OneandintlCard,
         title: "oneandintl",
-        id: 7,
-        description:'One and Intel is a  well known trading company specializing in the importation of agricultural products, oils, and grains across multiple countries. The website highlights their import regions, the range of products they trade, and showcases their potential in the global market.',
+        id: 8,
+        description:`Designed and developed the website for One and Intel, a well-known trading company specializing in the importation of agricultural products, oils, and grains across multiple countries. The website highlights their import regions, product range, and showcases their global market potential.
+<ul class="list">
+  <li>Collaborated with designers to translate Figma prototypes into responsive, reusable components.</li>
+  <li>Implemented cross-browser compatibility and mobile-first design.</li>
+  <li>Optimized page load performance, including image optimization.</li>
+  <li>Managed version control using GitHub.</li>
+</ul>`,
         detailedPics: [
             { src: One1, alt: 'oneandintl feature 1' },
             { src: One2, alt: 'oneandintl feature 2' },

@@ -94,7 +94,7 @@ export default function HomeSlider() {
             </div>
           </div>
           <AnimatedWrapper duration={0.8} delay={0.2}>
-            <p className='flex-1 w-10/12 sm:w-2/3 lg:w-10/12 text-sm md:text-base leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I’m a Toronto-based FrontEnd Developer with 5 years of experience, specializing in creating responsive, high-performance web and mobile applications. With expertise in React.js, Next.js, React Native, Node.js, TypeScript, and more. I bring designs to life with clean, reusable code and a sharp eye for detail. I adapt quickly to the tools and workflows that best serve each project.</p>
+            <p className='flex-1 w-10/12 sm:w-5/6 md:w-full lg:w-10/12 text-sm md:text-base leading-relaxed tracking-wide my-5 lg:my-8 tracking-[0.3rem] relative'> I’m a Toronto-based FrontEnd Developer with 5 years of experience, specializing in creating responsive, high-performance web and mobile applications. With expertise in React.js, Next.js, React Native, Node.js, TypeScript, and more. I bring designs to life with clean, reusable code and a sharp eye for detail. I adapt quickly to the tools and workflows that best serve each project.</p>
           </AnimatedWrapper>
         </div>
         <div className='flex-1 md:flex lg:w-3/4 md:h-full gap-8 xl:pt-8'>
@@ -102,6 +102,12 @@ export default function HomeSlider() {
             <h2 className='font-bold mb-5 md:mb-0 text-xl md:text-2xl font-safiro-reg-i'>Collabs</h2>
           </AnimatedWrapper>
           <div className='text flex flex-col gap-2 md:gap-4'>
+          <AnimatedWrapper duration={0.5} delay={0.2}>
+              <div className='gap-3 flex flex-col'>
+                <span className='font-black'>HHF GCA <span className='text-xs mx-3'>2025</span></span>
+                <span className='text-sm'>Web developer</span>
+              </div>
+            </AnimatedWrapper>
             <AnimatedWrapper duration={0.6} delay={0.3}>
               <div className='gap-3 flex flex-col'>
                 <span className='font-black'>Mehrayan <span className='text-xs mx-3'>2022-2024</span></span>
